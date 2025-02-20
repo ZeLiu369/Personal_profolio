@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 /* eslint-disable */
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
@@ -107,4 +105,4 @@ const Banner = () =>
 
 
 export default Banner;
->>>>>>> 60b1cc3
+
