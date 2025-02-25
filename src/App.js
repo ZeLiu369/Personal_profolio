@@ -6,6 +6,7 @@ import { Skills } from './components/Skills';
 import { Projects } from './components/Project';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import Experience from "./components/Experience";
 
 
 function App()
@@ -15,6 +16,7 @@ function App()
       <NavBar />
       <Banner />
       <Skills />
+      <Experience />
       <Projects />
       <Contact />
       <Footer />
