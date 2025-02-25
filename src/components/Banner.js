@@ -84,18 +84,17 @@ const Banner = () =>
         <section className="banner" id="home">
             <Container>
                 <Row className='align-items-center'>
-                    <Col xs={12} md={6} xl={7}>
+                    <Col xs={12} md={8} xl={10}>
 
                         <span className="tagline">Welcome to Ze's Webites</span>
                         {/* <h1>{`Hello I am Ze, I am a `}<span className="wrap">{text}</span></h1> */}
                         <h1>{`Hi! I'm Ze, a`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
                         <p>{`I am a problem solver with a passion for making things done.`}</p>
-                        <button onClick={() => console.log('clicked')}>Contact Me! </button>
                     </Col>
                     {/* the moving picture */}
-                    <Col xs={12} md={6} xl={5}>
+                    {/* <Col xs={12} md={6} xl={5}>
                         <img src={headerImg} alt="Header Img" />
-                    </Col>
+                    </Col> */}
                 </Row>
             </Container>
         </section>
