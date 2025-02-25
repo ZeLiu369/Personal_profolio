@@ -113,6 +113,20 @@ span.navbar-text {
     display: flex;
     align-items: center;
 }
+
+.logo-avatar {
+  width: 50px; /* 控制头像大小 */
+  height: 50px;
+  border-radius: 50%; /* 让头像变成圆形 */
+  object-fit: cover; /* 确保图片不会变形 */
+  border: 2px solid white; /* 添加白色边框 */
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-avatar:hover {
+  transform: scale(1.1); /* 鼠标悬停时放大 */
+}
+
 .social-icon {
     display: inline-block;
     margin-left: 14px;
@@ -743,3 +757,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
+
+.footer .logo-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 20px auto 10px auto; /* 上下间距调整 */
+  cursor: pointer; /* 鼠标变成手型，表示可点击 */
+}
+
+
+
