@@ -376,14 +376,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /* 时间轴条目 */
 .timeline-item {
   position: relative;
-  width: 50%;
+  width: 60%;
   padding: 20px;
   box-sizing: border-box;
 }
 
 /* 左侧条目 */
 .timeline-item.left {
-  left: 0;
+  left: -10%;
   text-align: right;
 }
 

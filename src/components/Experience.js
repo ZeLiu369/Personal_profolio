@@ -10,9 +10,10 @@ const experiences = [
         description: "Participated in software development, data collection, and other engineering-related tasks."
     },
     {
-        company: "BAYS Technologies",
-        position: "Software Engineer (part-time)",
-        duration: "Sept. 2024 - Sept. 2022",
+        company: "BAYS Tech",
+        position: "Software Engineer",
+        duration: "Sept. 2024 - Sept. 2022 (part-time)",
+        companyLink: "https://www.baystech.net/",
         description: "Contributed to the AI-powered smart smoke detector product."
     },
     {
