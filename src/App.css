@@ -474,6 +474,143 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 }
 
+/************ Education Timeline Css ************/
+.education-section {
+  padding: 80px 0;
+  background-color: #121212;
+}
+
+.education-section h2 {
+  font-size: 45px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* 时间轴 */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* 竖线 */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-50%);
+}
+
+/* 时间轴条目 */
+.timeline-item {
+  position: relative;
+  width: 60%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 左侧条目 */
+.timeline-item.left {
+  left: -10%;
+  text-align: right;
+}
+
+/* 右侧条目 */
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+/* 经验内容 */
+.timeline-content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 鼠标悬停放大 */
+.timeline-content:hover {
+  transform: scale(1.05);
+}
+
+/* 时间点 */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(90deg, #AA367C, #4A2FBD);
+  border-radius: 50%;
+  left: calc(50% - 8px);
+  z-index: 1;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* 时间文本 */
+.timeline-date {
+  font-size: 16px;
+  font-weight: 700;
+  color: #aaa;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* 学校超链接 */
+.school-link {
+  color: #4A39B2;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.school-link:hover {
+  color: #AA367C;
+  text-decoration: underline;
+}
+
+/* 学位 */
+.timeline-content h4 {
+  font-size: 18px;
+  color: #ddd;
+  margin-top: 5px;
+}
+
+/* 经验描述 */
+.timeline-content p {
+  font-size: 16px;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+  .timeline::before {
+      left: 30px;
+  }
+
+  .timeline-item {
+      width: 100%;
+      padding-left: 50px;
+      text-align: left;
+  }
+
+  .timeline-item.right {
+      left: 0;
+  }
+
+  .timeline-item::after {
+      left: 22px;
+  }
+}
 
 /************ Projects Css ************/
 .project {
