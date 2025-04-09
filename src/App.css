@@ -83,12 +83,12 @@ p.danger {
 }
 /************ Navbar Css ************/
 nav.navbar {
-  padding: 18px 0;
+  padding: 12px 0;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 9999;
-  transition:  0.32s ease-in-out;
+  transition: 0.32s ease-in-out;
 }
 nav.navbar.scrolled {
   padding: 0px 0;
@@ -247,7 +247,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
-  padding: 260px 0 100px 0;
+  padding: 120px 0 70px 0;
   background-image: url('./assets/img/banner-bg.png');
   background-position: top center;
   background-size: cover;
@@ -316,20 +316,24 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Skills Css ************/
 .skill {
-  padding: 0 0 50px 0;
   position: relative;
 }
+
 .skill-bx {
-  background: #151515;
-  border-radius: 64px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
   text-align: center;
-  padding: 60px 50px;
-  margin-top: -60px;
+  padding: 30px 50px;
+  margin-top: -20px;
+  backdrop-filter: blur(4px);
 }
+
 .skill h2 {
-	font-size: 45px;
-	font-weight: 700;
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
+
 .skill p {
     color: #B8B8B8;
     font-size: 18px;
@@ -337,15 +341,18 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     line-height: 1.5em;
     margin: 14px 0 75px 0;
 }
+
 .skill-slider {
   width: 80%;
   margin: 0 auto;
   position: relative;
 }
+
 .skill-slider .item img {
   width: 50%;
   margin: 0 auto 15px auto;
 }
+
 .background-image-left {
   top: 28%;
   position: absolute;
@@ -354,6 +361,245 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
+/* Carousel Navigation Improvements */
+.skill-slider .react-multiple-carousel__arrow {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  min-width: 45px;
+  min-height: 45px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.skill-slider .react-multiple-carousel__arrow:hover {
+  background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.8) -5.91%, rgba(74, 47, 189, 0.8) 111.58%);
+  border: none;
+  transform: scale(1.1);
+}
+
+.skill-slider .react-multiple-carousel__arrow::before {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Progress Circle Improvements */
+.skill .item {
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.skill .item:hover {
+  transform: translateY(-5px);
+}
+
+.skill .item img {
+  width: 180px;
+  margin: 0 auto 15px auto;
+  filter: drop-shadow(0 0 15px rgba(170, 54, 124, 0.3));
+  transition: all 0.3s ease;
+}
+
+.skill .item:hover img {
+  filter: drop-shadow(0 0 25px rgba(170, 54, 124, 0.5));
+  transform: scale(1.05);
+}
+
+.skill .item h5 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  margin-top: 20px;
+}
+
+/* Progress Circle Animation */
+@keyframes progress-fill {
+  from { stroke-dasharray: 0 100; }
+  to { stroke-dasharray: var(--progress) 100; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .skill-bx {
+    padding: 40px 20px;
+  }
+
+  .skill h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .skill .item img {
+    width: 140px;
+  }
+
+  .skill .item h5 {
+    font-size: 16px;
+  }
+
+  .skill-slider .react-multiple-carousel__arrow {
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+
+/* Custom Dots for Carousel */
+.skill-slider .react-multi-carousel-dot-list {
+  margin-top: 20px;
+}
+
+.skill-slider .react-multi-carousel-dot button {
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  width: 8px;
+  height: 8px;
+  transition: all 0.3s ease;
+}
+
+.skill-slider .react-multi-carousel-dot--active button {
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  width: 16px;
+  border-radius: 4px;
+}
+
+/* Modern Skill Bars */
+.skills-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 30px;
+}
+
+.skill-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 25px 30px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skill-icon {
+  font-size: 24px;
+  color: #AA367C;
+}
+
+.skill-header h5 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.percentage {
+  font-size: 16px;
+  font-weight: 600;
+  color: #AA367C;
+}
+
+.skill-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  border-radius: 4px;
+  transition: width 1.5s ease-in-out;
+}
+
+.skill-technologies {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 12px;
+  white-space: pre-line;
+  line-height: 1.8;
+  text-align: left;
+  padding-left: 10px;
+  border-left: 3px solid rgba(170, 54, 124, 0.5);
+}
+
+.skill-technologies strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+/* Mobile Responsiveness for Skills */
+@media (max-width: 768px) {
+  .skills-container {
+    padding: 10px 15px;
+  }
+
+  .skill-item {
+    padding: 20px;
+  }
+
+  .skill-header h5 {
+    font-size: 16px;
+  }
+
+  .skill-icon {
+    font-size: 20px;
+  }
+
+  .percentage {
+    font-size: 14px;
+  }
+
+  .skill-technologies {
+    font-size: 12px;
+  }
+
+  .skill-bar {
+    height: 6px;
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-container {
+    padding: 10px;
+  }
+
+  .skill-item {
+    padding: 15px;
+  }
+
+  .skill-header h5 {
+    font-size: 15px;
+  }
+
+  .skill-icon {
+    font-size: 18px;
+  }
+
+  .skill-technologies {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+}
 
 /************ Experience Timeline Css ************/
 .experience-section {
@@ -908,7 +1154,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /* Responsive Styles */
 @media (max-width: 1200px) {
   .banner {
-    padding: 200px 0 80px 0;
+    padding: 130px 0 80px 0;
   }
   
   .banner h1 {
@@ -927,7 +1173,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 @media (max-width: 992px) {
   .banner {
-    padding: 180px 0 60px 0;
+    padding: 120px 0 60px 0;
   }
   
   .banner h1 {
@@ -951,7 +1197,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 @media (max-width: 768px) {
   .banner {
-    padding: 150px 0 50px 0;
+    padding: 100px 0 50px 0;
   }
   
   .banner h1 {
@@ -963,7 +1209,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
   
   nav.navbar {
-    padding: 15px 0;
+    padding: 10px 0;
   }
   
   nav.navbar a.navbar-brand {
