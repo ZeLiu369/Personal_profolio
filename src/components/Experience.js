@@ -5,14 +5,14 @@ const experiences = [
     {
         company: "QCA Systems",
         position: "Software Developer (Data Team)",
-        duration: "Sept. 2024 - Dec 2022",
+        duration: "Sept. 2024 - Dec 2024",
         companyLink: "https://qcasystems.com/",
         description: "Participated in software development, data collection, and other engineering-related tasks."
     },
     {
         company: "BAYS Tech",
         position: "Software Engineer",
-        duration: "Sept. 2024 - Sept. 2022 (part-time)",
+        duration: "Aug. 2024 - Sept. 2024 (part-time)",
         companyLink: "https://www.baystech.net/",
         description: "Contributed to the AI-powered smart smoke detector product."
     },
