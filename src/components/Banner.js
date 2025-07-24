@@ -10,7 +10,7 @@ const Banner = () =>
 {
     // 实现打字的效果
     let [text, setText] = useState('');
-    const textList = useMemo(() => ['Developer', 'Programmer', 'Problem Solver', 'Quick Learner'], []); // useMemo 缓存 这样不会每次re-render都 重新创建一个新的list
+    const textList = useMemo(() => ['Programmer', 'Problem Solver', 'Quick Learner'], []); // useMemo 缓存 这样不会每次re-render都 重新创建一个新的list
     let [index, setIndex] = useState(0);
     let [tying, setTying] = useState(true);
     let [deleting, setDeleting] = useState(false);
