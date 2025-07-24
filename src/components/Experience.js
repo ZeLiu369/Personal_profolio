@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 const experiences = [
     {
         company: "QCA Systems",
-        position: "Software Developer (Data Team)",
+        position: "Software Developer",
         duration: "Sept. 2024 - Dec 2024",
         companyLink: "https://qcasystems.com/",
         description: "Participated in software development, data collection, and other engineering-related tasks."
@@ -18,7 +18,7 @@ const experiences = [
     },
     {
         company: "SiftMed Inc.",
-        position: "Full-Stack Software Engineer",
+        position: "Software Engineer",
         duration: "Sept. 2021 - Sept. 2022",
         companyLink: "https://siftmed.ca",
         description: "Engaged in the development and design of a web-based AI document platform."

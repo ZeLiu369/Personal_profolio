@@ -49,7 +49,7 @@ export const Skills = () =>
             skill: "Software Engineering",
             percentage: 95,
             icon: <FaCode className="skill-icon" />,
-            technologies: "C++, C#, C, Java"
+            technologies: "C++, C#, C, Java, Python"
         },
         {
             skill: "AI & Machine Learning",
