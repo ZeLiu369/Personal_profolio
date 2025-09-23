@@ -39,6 +39,17 @@ export const NavBar = () =>
         setMobileMenuOpen(!mobileMenuOpen);
     }
 
+    const handleMouseMove = (e) =>
+    {
+        const link = e.currentTarget;
+        const rect = link.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        link.style.setProperty('--mouse-x', `${x}px`);
+        link.style.setProperty('--mouse-y', `${y}px`);
+    };
+
     return (
         <Router>
             <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ease-in-out ${scrolled ? 'py-0 bg-black' : 'py-3'}`}>
@@ -68,12 +79,22 @@ export const NavBar = () =>
 
                         {/* Desktop menu */}
                         <div className="hidden md:flex items-center space-x-8">
-                            <div className="flex space-x-6">
-                                <a href="#home" className={`font-normal text-white tracking-wider px-6 text-lg transition-all duration-300 ease-in-out lg:px-4 lg:text-base hover:opacity-100 ${activeLink === 'home' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('home')}>Home</a>
-                                <a href="#skills" className={`font-normal text-white tracking-wider px-6 text-lg transition-all duration-300 ease-in-out lg:px-4 lg:text-base hover:opacity-100 ${activeLink === 'skills' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('skills')}>Skills</a>
-                                <a href="#experience" className={`font-normal text-white tracking-wider px-6 text-lg transition-all duration-300 ease-in-out lg:px-4 lg:text-base hover:opacity-100 ${activeLink === 'experience' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('experience')}>Experience</a>
-                                <a href="#education" className={`font-normal text-white tracking-wider px-6 text-lg transition-all duration-300 ease-in-out lg:px-4 lg:text-base hover:opacity-100 ${activeLink === 'education' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('education')}>Education</a>
-                                <a href="#projects" className={`font-normal text-white tracking-wider px-6 text-lg transition-all duration-300 ease-in-out lg:px-4 lg:text-base hover:opacity-100 ${activeLink === 'projects' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('projects')}>Projects</a>
+                            <div className="flex items-center space-x-2">
+                                <a href="#home" onMouseMove={handleMouseMove} className={`nav-link relative font-normal tracking-wider px-5 py-2 rounded-full text-lg lg:px-4 lg:text-base overflow-hidden transition-colors duration-300 ease-in-out ${activeLink === 'home' ? 'text-white' : 'text-white/75'}`} onClick={() => onUpdateActiveLink('home')}>
+                                    <span className="relative z-10">Home</span>
+                                </a>
+                                <a href="#skills" onMouseMove={handleMouseMove} className={`nav-link relative font-normal tracking-wider px-5 py-2 rounded-full text-lg lg:px-4 lg:text-base overflow-hidden transition-colors duration-300 ease-in-out ${activeLink === 'skills' ? 'text-white' : 'text-white/75'}`} onClick={() => onUpdateActiveLink('skills')}>
+                                    <span className="relative z-10">Skills</span>
+                                </a>
+                                <a href="#experience" onMouseMove={handleMouseMove} className={`nav-link relative font-normal tracking-wider px-5 py-2 rounded-full text-lg lg:px-4 lg:text-base overflow-hidden transition-colors duration-300 ease-in-out ${activeLink === 'experience' ? 'text-white' : 'text-white/75'}`} onClick={() => onUpdateActiveLink('experience')}>
+                                    <span className="relative z-10">Experience</span>
+                                </a>
+                                <a href="#education" onMouseMove={handleMouseMove} className={`nav-link relative font-normal tracking-wider px-5 py-2 rounded-full text-lg lg:px-4 lg:text-base overflow-hidden transition-colors duration-300 ease-in-out ${activeLink === 'education' ? 'text-white' : 'text-white/75'}`} onClick={() => onUpdateActiveLink('education')}>
+                                    <span className="relative z-10">Education</span>
+                                </a>
+                                <a href="#projects" onMouseMove={handleMouseMove} className={`nav-link relative font-normal tracking-wider px-5 py-2 rounded-full text-lg lg:px-4 lg:text-base overflow-hidden transition-colors duration-300 ease-in-out ${activeLink === 'projects' ? 'text-white' : 'text-white/75'}`} onClick={() => onUpdateActiveLink('projects')}>
+                                    <span className="relative z-10">Projects</span>
+                                </a>
                             </div>
                             <div className="flex items-center space-x-4">
                                 <div className="inline-block ml-4">
@@ -105,12 +126,12 @@ export const NavBar = () =>
                         {/* Mobile menu */}
                         <div className={`md:hidden absolute top-full left-0 w-full bg-dark transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
                             <div className="bg-dark p-4 rounded mt-3">
-                                <div className="mt-3">
-                                    <a href="#home" className={`py-3 text-center min-h-11 min-w-11 flex items-center justify-center font-normal text-white tracking-wider text-lg transition-all duration-300 ease-in-out hover:opacity-100 ${activeLink === 'home' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('home')}>Home</a>
-                                    <a href="#skills" className={`py-3 text-center min-h-11 min-w-11 flex items-center justify-center font-normal text-white tracking-wider text-lg transition-all duration-300 ease-in-out hover:opacity-100 ${activeLink === 'skills' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('skills')}>Skills</a>
-                                    <a href="#experience" className={`py-3 text-center min-h-11 min-w-11 flex items-center justify-center font-normal text-white tracking-wider text-lg transition-all duration-300 ease-in-out hover:opacity-100 ${activeLink === 'experience' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('experience')}>Experience</a>
-                                    <a href="#education" className={`py-3 text-center min-h-11 min-w-11 flex items-center justify-center font-normal text-white tracking-wider text-lg transition-all duration-300 ease-in-out hover:opacity-100 ${activeLink === 'education' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('education')}>Education</a>
-                                    <a href="#projects" className={`py-3 text-center min-h-11 min-w-11 flex items-center justify-center font-normal text-white tracking-wider text-lg transition-all duration-300 ease-in-out hover:opacity-100 ${activeLink === 'projects' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('projects')}>Projects</a>
+                                <div className="flex flex-col items-center space-y-2 mt-3">
+                                    <a href="#home" className={`py-3 w-full text-center rounded-lg font-normal tracking-wider text-lg transition-colors duration-300 ease-in-out hover:bg-white/10 hover:text-white ${activeLink === 'home' ? 'text-white' : 'text-white/75'}`} onClick={() => onUpdateActiveLink('home')}>Home</a>
+                                    <a href="#skills" className={`py-3 w-full text-center rounded-lg font-normal tracking-wider text-lg transition-colors duration-300 ease-in-out hover:bg-white/10 hover:text-white ${activeLink === 'skills' ? 'text-white' : 'text-white/75'}`} onClick={() => onUpdateActiveLink('skills')}>Skills</a>
+                                    <a href="#experience" className={`py-3 w-full text-center rounded-lg font-normal tracking-wider text-lg transition-colors duration-300 ease-in-out hover:bg-white/10 hover:text-white ${activeLink === 'experience' ? 'text-white' : 'text-white/75'}`} onClick={() => onUpdateActiveLink('experience')}>Experience</a>
+                                    <a href="#education" className={`py-3 w-full text-center rounded-lg font-normal tracking-wider text-lg transition-colors duration-300 ease-in-out hover:bg-white/10 hover:text-white ${activeLink === 'education' ? 'text-white' : 'text-white/75'}`} onClick={() => onUpdateActiveLink('education')}>Education</a>
+                                    <a href="#projects" className={`py-3 w-full text-center rounded-lg font-normal tracking-wider text-lg transition-colors duration-300 ease-in-out hover:bg-white/10 hover:text-white ${activeLink === 'projects' ? 'text-white' : 'text-white/75'}`} onClick={() => onUpdateActiveLink('projects')}>Projects</a>
                                 </div>
                                 <div className="mt-4 text-center">
                                     <a href="https://www.linkedin.com/in/zeliu369/" target="_blank" rel="noopener noreferrer" className="group w-10 h-10 bg-white bg-opacity-10 inline-flex rounded-full mr-2 items-center justify-center border border-white border-opacity-50 relative transition-all duration-300 ease-in-out

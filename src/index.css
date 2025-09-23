@@ -123,4 +123,23 @@ code {
       @apply px-16;
     }
   }
+
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px; /* rounded-full */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background: radial-gradient(
+      200px circle at var(--mouse-x) var(--mouse-y),
+      rgba(170, 54, 124, 0.3), /* Main theme color glow */
+      rgba(74, 47, 189, 0.2) 60%, /* Secondary theme color glow */
+      transparent 80%
+    );
+  }
+
+  .nav-link:hover::before {
+    opacity: 1;
+  }
 }
