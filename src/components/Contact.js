@@ -79,89 +79,79 @@ export const Contact = () =>
 
     return (
         <section className="contact" id="connect">
-            <Container>
-                {/* "align-items-center" */}
-                <Row className="d-flex justify-content-center align-items-center">
-                    {/* <Col size={12} md={6}>
-                        <TrackVisibility>
-                            {({ isVisible }) => (
-                                <img
-                                    className={isVisible ? "animate__animated animate__zoomIn" : ""}
-                                    src={contactImg}
-                                    alt="Contact Us"
-                                />
-                            )}
-                        </TrackVisibility>
-                    </Col> */}
-                    <Col size={12} md={6}>
+            <div className="main-container">
+                <div className="flex justify-center items-center">
+                    <div className="w-full md:w-1/2">
                         <TrackVisibility>
                             {({ isVisible }) => (
                                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                                     <h2>Get In Touch</h2>
-                                    <form onSubmit={handleSubmit}>
-                                        <Row>
-                                            <Col size={12} sm={6} className="px-1">
+                                    <form onSubmit={handleSubmit} className="space-y-4">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                            <div>
                                                 <input
                                                     type="text"
                                                     value={formDetails.firstName}
                                                     placeholder="First Name"
                                                     onChange={(e) => onFormUpdate("firstName", e.target.value)}
                                                 />
-                                                {errors.firstName && <p className="error">{errors.firstName}</p>}
-                                            </Col>
-                                            <Col size={12} sm={6} className="px-1">
+                                                {errors.firstName && <p className="error text-red-500 text-sm mt-1">{errors.firstName}</p>}
+                                            </div>
+                                            <div>
                                                 <input
                                                     type="text"
                                                     value={formDetails.lastName}
                                                     placeholder="Last Name"
                                                     onChange={(e) => onFormUpdate("lastName", e.target.value)}
                                                 />
-                                                {errors.lastName && <p className="error">{errors.lastName}</p>}
-                                            </Col>
-                                            <Col size={12} sm={6} className="px-1">
+                                                {errors.lastName && <p className="error text-red-500 text-sm mt-1">{errors.lastName}</p>}
+                                            </div>
+                                            <div>
                                                 <input
                                                     type="email"
                                                     value={formDetails.email}
                                                     placeholder="Email Address"
                                                     onChange={(e) => onFormUpdate("email", e.target.value)}
                                                 />
-                                                {errors.email && <p className="error">{errors.email}</p>}
-                                            </Col>
-                                            <Col size={12} sm={6} className="px-1">
+                                                {errors.email && <p className="error text-red-500 text-sm mt-1">{errors.email}</p>}
+                                            </div>
+                                            <div>
                                                 <input
                                                     type="tel"
                                                     value={formDetails.phone}
                                                     placeholder="Phone No."
                                                     onChange={(e) => onFormUpdate("phone", e.target.value)}
                                                 />
-                                            </Col>
-                                            <Col size={12} className="px-1">
-                                                <textarea
-                                                    rows="6"
-                                                    value={formDetails.message}
-                                                    placeholder="Message"
-                                                    onChange={(e) => onFormUpdate("message", e.target.value)}
-                                                ></textarea>
-                                                {errors.message && <p className="error">{errors.message}</p>}
-                                                <button type="submit">
-                                                    <span>{buttonText}</span>
-                                                </button>
-                                            </Col>
-                                            {status.message && (
-                                                <Col>
-                                                    <p className={status.success === false ? "danger" : "success"}>
-                                                        {status.message}
-                                                    </p>
-                                                </Col>
-                                            )}
-                                        </Row>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <textarea
+                                                rows="6"
+                                                value={formDetails.message}
+                                                placeholder="Message"
+                                                onChange={(e) => onFormUpdate("message", e.target.value)}
+                                            ></textarea>
+                                            {errors.message && <p className="error text-red-500 text-sm mt-1">{errors.message}</p>}
+                                        </div>
+                                        <div>
+                                            <button type="submit">
+                                                <span>{buttonText}</span>
+                                            </button>
+                                        </div>
+                                        {status.message && (
+                                            <div>
+                                                <p className={status.success === false ? "danger" : "success"}>
+                                                    {status.message}
+                                                </p>
+                                            </div>
+                                        )}
                                     </form>
                                 </div>
                             )}
                         </TrackVisibility>
-                    </Col>
-                </Row>
-            </Container>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 };

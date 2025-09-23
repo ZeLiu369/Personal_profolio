@@ -1,77 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Custom font faces */
-@font-face {
-  font-family: Centra;
-  src: url('./assets/font/CentraNo2-Bold.ttf');
-  font-weight: 700;
-}
-@font-face {
-  font-family: Centra;
-  src: url('./assets/font/CentraNo2-Medium.ttf');
-  font-weight: 500;
-}
-@font-face {
-  font-family: Centra;
-  src: url('./assets/font/CentraNo2-Book.ttf');
-  font-weight: 400;
-}
-
-@layer base {
-  html {
-    @apply scroll-smooth;
-    scroll-padding-top: 75px;
-  }
-
-  body {
-    @apply m-0 overflow-x-hidden relative bg-dark text-white font-centra font-normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply m-0 p-0 leading-normal;
-  }
-
-  p, a, li, button, ul {
-    @apply m-0 p-0 leading-normal no-underline;
-  }
-
-  a:hover {
-    @apply no-underline;
-  }
-
-  img {
-    @apply w-full h-auto;
-  }
-
-  button {
-    @apply border-0 bg-transparent;
-  }
-
-  input:focus, textarea:focus, select:focus {
-    @apply outline-none;
-  }
-}
-
-@layer utilities {
-  .success {
-    @apply text-green-500;
-  }
-
-  .danger {
-    @apply text-red-500;
-  }
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 /* TailwindCSS Components - Converted from original CSS */
+
 @layer components {
   /* Container responsive adjustments */
   .main-container {
@@ -165,9 +93,7 @@ code {
   }
 
   .navbar-toggler-icon {
-    @apply w-6 h-4 relative border-b-2 border-white transition-all duration-300 ease-linear;
-    top: -2px;
-    background-image: none;
+    @apply w-6 h-4 bg-none relative border-b-2 border-white transition-all duration-300 linear -top-0.5;
   }
 
   .navbar-toggler-icon:focus {
@@ -176,7 +102,7 @@ code {
 
   .navbar-toggler-icon:after,
   .navbar-toggler-icon:before {
-    @apply w-6 absolute h-0.5 bg-white top-0 left-0 content-[""] z-20 transition-all duration-300 ease-linear;
+    @apply w-6 absolute h-0.5 bg-white top-0 left-0 content-[""] z-20 transition-all duration-300 linear;
   }
 
   .navbar-toggler-icon:after {
@@ -262,7 +188,7 @@ code {
   }
 
   .background-image-right {
-    @apply top-20 absolute bottom-0 w-1/3 right-0 -z-10;
+    @apply top-1/5 absolute bottom-0 w-1/3 right-0 -z-10;
   }
 
   /* Skills Container - Modern skill bars */
@@ -275,7 +201,7 @@ code {
   }
 
   .skill-item:hover {
-    @apply -translate-y-1 bg-dark bg-opacity-95;
+    @apply -translate-y-1 bg-dark bg-opacity-98;
   }
 
   .skill-info {
@@ -303,7 +229,7 @@ code {
   }
 
   .skill-bar-fill {
-    @apply h-full bg-gradient-to-r from-primary to-primary-dark rounded transition-all duration-1000 ease-in-out;
+    @apply h-full bg-gradient-to-r from-primary to-primary-dark rounded transition-all duration-1500 ease-in-out;
   }
 
   .skill-technologies {
@@ -432,7 +358,7 @@ code {
   }
 
   .project-card:hover {
-    @apply -translate-y-3 bg-white bg-opacity-10 shadow-2xl border-white border-opacity-20;
+    @apply -translate-y-3 bg-white bg-opacity-8 shadow-2xl border-white border-opacity-20;
   }
 
   .proj-imgbx {
@@ -440,7 +366,7 @@ code {
   }
 
   .proj-imgbx img {
-    @apply w-full h-full object-cover object-center transition-transform duration-500 ease-in-out;
+    @apply w-full h-full object-cover object-center transition-transform duration-400 ease-in-out;
   }
 
   .project-card:hover .proj-imgbx img {
@@ -745,7 +671,7 @@ code {
   }
 
   /* Mobile Navigation Improvements */
-  @media (max-width: 767px) {
+  @screen max-md {
     .navbar-collapse {
       @apply bg-dark p-4 rounded;
     }
@@ -769,7 +695,7 @@ code {
   }
 
   /* Prevent Text Overflow */
-  @media (max-width: 767px) {
+  @screen max-md {
     .banner h1,
     .banner p,
     .skill h2,
@@ -783,13 +709,13 @@ code {
   }
 
   /* Projects Mobile Improvements */
-  @media (max-width: 767px) {
+  @screen max-md {
     .project {
       @apply py-10;
     }
 
     .project .nav-pills {
-      @apply flex-col w-full bg-transparent gap-3 mb-8;
+      @apply flex-col w-full bg-none gap-3 mb-8;
     }
 
     .project .nav-pills .nav-item {
@@ -856,7 +782,7 @@ code {
     }
   }
 
-  @media (max-width: 639px) {
+  @screen max-sm {
     .project {
       @apply py-8;
     }
@@ -904,14 +830,14 @@ code {
   }
 
   /* Mobile Project Card Improvements */
-  @media (max-width: 767px) {
+  @screen max-md {
     .project-card:hover {
       @apply -translate-y-1;
     }
   }
 
   /* Carousel and Skills Responsiveness */
-  @media (max-width: 767px) {
+  @screen max-md {
     .skill-slider .react-multiple-carousel__arrow {
       @apply bg-white bg-opacity-10 border border-white border-opacity-20 backdrop-blur-sm min-w-11 min-h-11 rounded-full transition-all duration-300;
     }
@@ -948,7 +874,7 @@ code {
     }
   }
 
-  @media (max-width: 639px) {
+  @screen max-sm {
     .skill-bx {
       @apply py-10 px-5;
     }
@@ -998,7 +924,7 @@ code {
     }
     
     .skill-item:hover {
-      @apply bg-dark bg-opacity-95;
+      @apply bg-dark bg-opacity-98;
     }
   }
 }

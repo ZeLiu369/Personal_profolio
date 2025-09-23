@@ -67,9 +67,9 @@ export const Skills = () =>
 
     return (
         <section className="skill" id="skills">
-            <Container>
-                <Row>
-                    <Col>
+            <div className="main-container">
+                <div className="flex justify-center">
+                    <div className="w-full">
                         <div className="skill-bx">
                             <h2>Skills</h2>
                             <div className="skills-container">
@@ -84,9 +84,9 @@ export const Skills = () =>
                                 ))}
                             </div>
                         </div>
-                    </Col>
-                </Row>
-            </Container>
+                    </div>
+                </div>
+            </div>
             <img className="background-image-left" src={colorSharp} alt="" />
         </section>
     );

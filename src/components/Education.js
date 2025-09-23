@@ -29,7 +29,7 @@ const Education = () =>
 {
     return (
         <section className="education-section" id="education">
-            <Container>
+            <div className="main-container">
                 <h2>Education</h2>
                 <div className="timeline">
                     {education.map((edu, index) => (
@@ -49,7 +49,7 @@ const Education = () =>
                         </div>
                     ))}
                 </div>
-            </Container>
+            </div>
         </section>
     );
 };

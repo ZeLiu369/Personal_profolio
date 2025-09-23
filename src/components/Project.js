@@ -63,16 +63,15 @@ export const Projects = () =>
 
     return (
         <section className="project" id="projects">
-            <Container>
-                <Row>
-                    <Col size={12}>
+            <div className="main-container">
+                <div className="flex justify-center">
+                    <div className="w-full">
                         <TrackVisibility>
                             {({ isVisible }) =>
                                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                                     <h2>Projects</h2>
-                                    {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p> */}
                                     <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                                        <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+                                        <Nav variant="pills" className="nav-pills flex justify-center items-center mb-5" id="pills-tab">
                                             <Nav.Item>
                                                 <Nav.Link eventKey="first">Projects</Nav.Link>
                                             </Nav.Item>
@@ -82,43 +81,33 @@ export const Projects = () =>
                                         </Nav>
                                         <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                                             <Tab.Pane eventKey="first">
-                                                <Row>
-                                                    {
-                                                        projects.map((project, index) =>
-                                                        {
-                                                            return (
-                                                                <ProjectCard
-                                                                    key={index}
-                                                                    {...project}
-                                                                />
-                                                            )
-                                                        })
-                                                    }
-                                                </Row>
+                                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                                    {projects.map((project, index) => (
+                                                        <ProjectCard
+                                                            key={index}
+                                                            {...project}
+                                                        />
+                                                    ))}
+                                                </div>
                                             </Tab.Pane>
                                             <Tab.Pane eventKey="second">
-                                                <Row>
-                                                    {
-                                                        publications.map((publication, index) =>
-                                                        {
-                                                            return (
-                                                                <ProjectCard
-                                                                    key={index}
-                                                                    {...publication}
-                                                                />
-                                                            )
-                                                        })
-                                                    }
-                                                </Row>
+                                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                                    {publications.map((publication, index) => (
+                                                        <ProjectCard
+                                                            key={index}
+                                                            {...publication}
+                                                        />
+                                                    ))}
+                                                </div>
                                             </Tab.Pane>
                                         </Tab.Content>
                                     </Tab.Container>
                                 </div>}
                         </TrackVisibility>
-                    </Col>
-                </Row>
-            </Container>
-            <img className="background-image-right" src={colorSharp2}></img>
+                    </div>
+                </div>
+            </div>
+            <img className="background-image-right" src={colorSharp2} alt="backgroundImage" />
         </section>
     )
 }
