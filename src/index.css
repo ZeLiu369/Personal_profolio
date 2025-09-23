@@ -58,11 +58,39 @@
 
 @layer utilities {
   .success {
-    @apply text-green-500;
+    @apply text-green-400 font-medium;
   }
 
   .danger {
-    @apply text-red-500;
+    @apply text-red-400 font-medium;
+  }
+
+  /* Smooth transitions for better UX */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Glass effect utilities */
+  .glass {
+    @apply backdrop-blur-md bg-white bg-opacity-10 border border-white border-opacity-20;
+  }
+
+  .glass-dark {
+    @apply backdrop-blur-md bg-dark bg-opacity-80 border border-white border-opacity-10;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent;
+  }
+
+  /* Modern shadows */
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(170, 54, 124, 0.3);
+  }
+
+  .shadow-glow-hover {
+    box-shadow: 0 0 30px rgba(170, 54, 124, 0.5);
   }
 }
 
@@ -75,12 +103,24 @@ code {
 @layer components {
   /* Container responsive adjustments */
   .main-container {
-    @apply max-w-full px-6 mx-auto;
+    @apply max-w-7xl px-6 mx-auto;
+  }
+
+  @screen lg {
+    .main-container {
+      @apply px-8;
+    }
   }
 
   @screen xl {
     .main-container {
-      @apply px-36;
+      @apply px-12;
+    }
+  }
+
+  @screen 2xl {
+    .main-container {
+      @apply px-16;
     }
   }
 

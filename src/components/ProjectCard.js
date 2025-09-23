@@ -1,4 +1,3 @@
-import { Col } from "react-bootstrap";
 
 export const ProjectCard = ({ title = "Untitled", description = "No description available", img = "www.example.com", link = "#", techStack = "Unknown" }) =>
 {

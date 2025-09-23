@@ -1,9 +1,5 @@
-import { Container, Row, Col } from "react-bootstrap";
-import logo from "../assets/img/logo.svg";
 import avatar from "../assets/img/self.png"; // 导入你的头像
 import navIcon1 from "../assets/img/nav-icon1.svg";
-import navIcon2 from "../assets/img/nav-icon2.svg";
-import navIcon3 from "../assets/img/nav-icon3.svg";
 import githubmarkwhite from '../assets/img/githubmarkwhite.svg'
 
 export const Footer = () =>
@@ -29,6 +25,3 @@ export const Footer = () =>
     )
 }
 
-{/* <Navbar.Brand href="/">
-                        <img src={avatar} alt="avator" className="logo-avatar" />
-                    </Navbar.Brand> */}

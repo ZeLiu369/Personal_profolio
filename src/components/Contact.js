@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -80,8 +79,8 @@ export const Contact = () =>
     return (
         <section className="contact" id="connect">
             <div className="main-container">
-                <div className="flex justify-center items-center">
-                    <div className="w-full md:w-1/2">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div className="w-full">
                         <TrackVisibility>
                             {({ isVisible }) => (
                                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
@@ -149,6 +148,9 @@ export const Contact = () =>
                                 </div>
                             )}
                         </TrackVisibility>
+                    </div>
+                    <div className="w-full flex justify-center">
+                        <img src={contactImg} alt="Contact Us" className="max-w-full h-auto" />
                     </div>
                 </div>
             </div>

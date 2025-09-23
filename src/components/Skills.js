@@ -1,4 +1,3 @@
-import { Container, Row, Col } from "react-bootstrap";
 import { FaCode, FaDatabase, FaBrain, FaChartBar } from 'react-icons/fa';
 import colorSharp from "../assets/img/color-sharp.png";
 

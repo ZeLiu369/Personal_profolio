@@ -1,6 +1,4 @@
 /* eslint-disable */
-import { Container, Row, Col } from "react-bootstrap";
-import { ArrowRightCircle } from 'react-bootstrap-icons';
 import headerImg from '../assets/img/header-img.svg'
 import { useEffect, useState, useMemo } from "react";
 
@@ -83,15 +81,24 @@ const Banner = () =>
     return (
         <section className="banner" id="home">
             <div className="main-container">
-                <div className="flex items-center min-h-screen">
-                    <div className="w-full md:w-4/5 xl:w-5/6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-screen">
+                    <div className="w-full order-2 lg:order-1">
                         <span className="tagline">Welcome to Ze's Websites</span>
-                        <h1 className="banner-title">
+                        <h1>
                             Hi! I'm Ze, a <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'>
                                 <span className="wrap">{text}</span>
                             </span>
                         </h1>
-                        <p className="banner-description">I am a problem solver with a passion for making things done.</p>
+                        <p>I am a problem solver with a passion for making things done.</p>
+                        <button className="flex items-center mt-8">
+                            Let's Connect
+                            <svg className="w-6 h-6 ml-2 transition-all duration-300 ease-in-out" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div className="w-full order-1 lg:order-2 flex justify-center lg:justify-end">
+                        <img src={headerImg} alt="Header Img" className="max-w-full h-auto" />
                     </div>
                 </div>
             </div>

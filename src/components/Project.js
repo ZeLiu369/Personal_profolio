@@ -1,4 +1,4 @@
-import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
+import { useState } from "react";
 import { ProjectCard } from "./ProjectCard";
 import travelPlaceImg from "../assets/img/travelPlace.png";
 import parklot_detection from "../assets/img/parklot_detection.png";
@@ -12,6 +12,7 @@ import TrackVisibility from 'react-on-screen';
 
 export const Projects = () =>
 {
+    const [activeTab, setActiveTab] = useState('first');
 
     const projects = [
         {
@@ -70,38 +71,50 @@ export const Projects = () =>
                             {({ isVisible }) =>
                                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                                     <h2>Projects</h2>
-                                    <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                                        <Nav variant="pills" className="nav-pills flex justify-center items-center mb-5" id="pills-tab">
-                                            <Nav.Item>
-                                                <Nav.Link eventKey="first">Projects</Nav.Link>
-                                            </Nav.Item>
-                                            <Nav.Item>
-                                                <Nav.Link eventKey="second">Publications/Papers</Nav.Link>
-                                            </Nav.Item>
-                                        </Nav>
-                                        <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
-                                            <Tab.Pane eventKey="first">
-                                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                                    {projects.map((project, index) => (
-                                                        <ProjectCard
-                                                            key={index}
-                                                            {...project}
-                                                        />
-                                                    ))}
-                                                </div>
-                                            </Tab.Pane>
-                                            <Tab.Pane eventKey="second">
-                                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                                    {publications.map((publication, index) => (
-                                                        <ProjectCard
-                                                            key={index}
-                                                            {...publication}
-                                                        />
-                                                    ))}
-                                                </div>
-                                            </Tab.Pane>
-                                        </Tab.Content>
-                                    </Tab.Container>
+                                    {/* Custom Tab Navigation */}
+                                    <div className="nav-pills flex justify-center items-center mb-5" id="pills-tab">
+                                        <div className="flex w-3/4 mx-auto rounded-full bg-white bg-opacity-10 overflow-hidden">
+                                            <button
+                                                className={`nav-link w-1/2 ${activeTab === 'first' ? 'active' : ''}`}
+                                                id="projects-tabs-tab-first"
+                                                onClick={() => setActiveTab('first')}
+                                            >
+                                                Projects
+                                            </button>
+                                            <button
+                                                className={`nav-link w-1/2 ${activeTab === 'second' ? 'active' : ''}`}
+                                                id="projects-tabs-tab-second"
+                                                onClick={() => setActiveTab('second')}
+                                            >
+                                                Publications/Papers
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    {/* Tab Content */}
+                                    <div id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                                        {activeTab === 'first' && (
+                                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                                {projects.map((project, index) => (
+                                                    <ProjectCard
+                                                        key={index}
+                                                        {...project}
+                                                    />
+                                                ))}
+                                            </div>
+                                        )}
+
+                                        {activeTab === 'second' && (
+                                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                                {publications.map((publication, index) => (
+                                                    <ProjectCard
+                                                        key={index}
+                                                        {...publication}
+                                                    />
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>}
                         </TrackVisibility>
                     </div>
