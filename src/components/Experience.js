@@ -6,7 +6,7 @@ const experiences = [
         company: "QCA Systems",
         position: "Software Developer",
         duration: "Sept. 2024 - Dec 2024",
-        location: "Remote",
+        location: "Delta, BC",
         companyLink: "https://qcasystems.com/",
         description: "Participated in software development, data collection, and other engineering-related tasks.",
         highlights: [
@@ -41,6 +41,14 @@ const Experience = () =>
                         <div key={index}
                             className={`relative w-full max-w-full mb-12 transition-all duration-500 ease-out opacity-0 animate-fadeInUp pl-16 pr-4 text-left md:mb-8`}
                             style={{ animationDelay: `${0.1 + index * 0.2}s` }}>
+                            <div className={`absolute top-8 w-6 h-6 rounded-full z-20 transition-all duration-300 ease-out 
+                                bg-gradient-to-t from-[#AA367C] to-[#4A2FBD] 
+                                shadow-[0_0_20px_rgba(170,54,124,0.6),0_0_40px_rgba(170,54,124,0.3),inset_0_2px_4px_rgba(255,255,255,0.2)] 
+                                hover:scale-125 animate-pulse
+                                group-hover:scale-125 group-hover:shadow-[0_0_30px_rgba(170,54,124,0.8),0_0_60px_rgba(170,54,124,0.4),inset_0_2px_4px_rgba(255,255,255,0.3)]
+                                left-4 transform -translate-x-1/2
+                                md:w-5 md:h-5`}>
+                            </div>
                             <div className="relative p-8 rounded-2xl transition-all duration-500 ease-out transform hover:-translate-y-2 cursor-pointer 
                                 bg-gradient-to-t from-[rgba(255,255,255,0.1)] to-[rgba(255,255,255,0.05)] 
                                 backdrop-blur-xl border border-solid border-[rgba(255,255,255,0.1)] 
@@ -48,15 +56,6 @@ const Experience = () =>
                                 hover:shadow-[0_20px_60px_rgba(170,54,124,0.2),0_10px_32px_rgba(0,0,0,0.4),0_0_0_1px_rgba(170,54,124,0.1),inset_0_1px_0_rgba(255,255,255,0.2)]
                                 before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-br before:from-transparent before:via-primary/5 before:to-primary-dark/10 before:opacity-0 before:rounded-2xl before:transition-opacity before:duration-500 before:ease-out before:pointer-events-none
                                 hover:before:opacity-100 group md:p-6">
-
-                                <div className={`absolute top-8 w-6 h-6 rounded-full z-20 transition-all duration-300 ease-out 
-                                    bg-gradient-to-t from-[#AA367C] to-[#4A2FBD] 
-                                    shadow-[0_0_20px_rgba(170,54,124,0.6),0_0_40px_rgba(170,54,124,0.3),inset_0_2px_4px_rgba(255,255,255,0.2)] 
-                                    hover:scale-125 animate-pulse
-                                    group-hover:scale-125 group-hover:shadow-[0_0_30px_rgba(170,54,124,0.8),0_0_60px_rgba(170,54,124,0.4),inset_0_2px_4px_rgba(255,255,255,0.3)]
-                                    left-6 transform -translate-x-1/2
-                                    md:w-5 md:h-5`}>
-                                </div>
 
                                 <div className="inline-block px-4 py-2 mb-4 text-sm font-semibold rounded-full bg-gradient-to-r from-primary/20 to-primary-dark/20 border border-solid border-primary/30 text-blue-300 transition-transform duration-300 group-hover:scale-105 md:text-xs md:px-3 md:py-1.5">
                                     <FaClock className="inline mr-2" />
