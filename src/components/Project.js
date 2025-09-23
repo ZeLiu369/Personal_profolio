@@ -73,17 +73,27 @@ export const Projects = () =>
                                     <h2>Projects</h2>
                                     {/* Custom Tab Navigation */}
                                     <div className="nav-pills flex justify-center items-center mb-5" id="pills-tab">
-                                        <div className="flex w-3/4 mx-auto rounded-full bg-white bg-opacity-10 overflow-hidden">
+                                        <div className="flex w-3/4 mx-auto rounded-full bg-white bg-opacity-10 overflow-hidden sm:w-full sm:mx-auto md:w-full">
                                             <button
-                                                className={`nav-link w-1/2 ${activeTab === 'first' ? 'active' : ''}`}
-                                                id="projects-tabs-tab-first"
+                                                className={`py-4 px-0 text-white w-1/2 text-lg tracking-wider font-medium relative transition-all duration-300 ease-in-out text-center z-0 before:content-[''] before:absolute before:w-0 before:h-full before:bg-gradient-to-r before:from-primary before:to-primary-dark before:top-0 before:left-0 before:-z-10 before:transition-all before:duration-300 before:ease-in-out border border-white border-opacity-50 rounded-l-full
+                            ${activeTab === 'first' ? 'active before:w-full border-white' : ''}
+                            sm:w-full sm:mb-3 sm:text-center sm:py-4 sm:px-5 sm:text-base sm:font-medium sm:text-white sm:text-opacity-80 sm:border sm:border-white sm:border-opacity-10 sm:transition-all sm:duration-300 sm:m-0 sm:rounded-xl sm:bg-white sm:bg-opacity-5 sm:backdrop-blur-sm
+                            sm:active:bg-gradient-to-r sm:active:from-primary/90 sm:active:to-primary-dark/90 sm:active:border-none sm:active:text-white sm:active:shadow-lg sm:active:-translate-y-1
+                            sm:not-active:hover:bg-white sm:not-active:hover:bg-opacity-10 sm:not-active:hover:-translate-y-0.5 sm:not-active:hover:shadow-md
+                            sm:before:hidden
+                            md:w-full`}
                                                 onClick={() => setActiveTab('first')}
                                             >
                                                 Projects
                                             </button>
                                             <button
-                                                className={`nav-link w-1/2 ${activeTab === 'second' ? 'active' : ''}`}
-                                                id="projects-tabs-tab-second"
+                                                className={`py-4 px-0 text-white w-1/2 text-lg tracking-wider font-medium relative transition-all duration-300 ease-in-out text-center z-0 before:content-[''] before:absolute before:w-0 before:h-full before:bg-gradient-to-r before:from-primary before:to-primary-dark before:top-0 before:left-0 before:-z-10 before:transition-all before:duration-300 before:ease-in-out border border-white border-opacity-50 rounded-r-full
+                            ${activeTab === 'second' ? 'active before:w-full border-white' : ''}
+                            sm:w-full sm:mb-3 sm:text-center sm:py-4 sm:px-5 sm:text-base sm:font-medium sm:text-white sm:text-opacity-80 sm:border sm:border-white sm:border-opacity-10 sm:transition-all sm:duration-300 sm:m-0 sm:rounded-xl sm:bg-white sm:bg-opacity-5 sm:backdrop-blur-sm
+                            sm:active:bg-gradient-to-r sm:active:from-primary/90 sm:active:to-primary-dark/90 sm:active:border-none sm:active:text-white sm:active:shadow-lg sm:active:-translate-y-1
+                            sm:not-active:hover:bg-white sm:not-active:hover:bg-opacity-10 sm:not-active:hover:-translate-y-0.5 sm:not-active:hover:shadow-md
+                            sm:before:hidden
+                            md:w-full`}
                                                 onClick={() => setActiveTab('second')}
                                             >
                                                 Publications/Papers
@@ -120,7 +130,7 @@ export const Projects = () =>
                     </div>
                 </div>
             </div>
-            <img className="background-image-right" src={colorSharp2} alt="backgroundImage" />
+            <img className="top-20 absolute bottom-0 w-1/3 right-0 -z-10" src={colorSharp2} alt="backgroundImage" />
         </section>
     )
 }

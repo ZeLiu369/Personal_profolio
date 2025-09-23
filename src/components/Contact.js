@@ -77,14 +77,14 @@ export const Contact = () =>
     };
 
     return (
-        <section className="contact" id="connect">
+        <section className="bg-gradient-to-r from-primary to-primary-dark py-16 pb-48" id="connect">
             <div className="main-container">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                     <div className="w-full">
                         <TrackVisibility>
                             {({ isVisible }) => (
                                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                                    <h2>Get In Touch</h2>
+                                    <h2 className="text-4xl font-bold mb-8">Get In Touch</h2>
                                     <form onSubmit={handleSubmit} className="space-y-4">
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div>
@@ -93,6 +93,7 @@ export const Contact = () =>
                                                     value={formDetails.firstName}
                                                     placeholder="First Name"
                                                     onChange={(e) => onFormUpdate("firstName", e.target.value)}
+                                                    className="w-full bg-white bg-opacity-10 border border-solid border-white border-opacity-50 rounded-3xl text-white mb-2 py-4 px-6 font-medium text-lg tracking-wider transition-all duration-300 ease-in-out focus:bg-white focus:text-dark placeholder:text-base placeholder:font-normal placeholder:text-white focus:placeholder:text-dark focus:placeholder:opacity-80 md:py-3 md:px-4"
                                                 />
                                                 {errors.firstName && <p className="error text-red-500 text-sm mt-1">{errors.firstName}</p>}
                                             </div>
@@ -102,6 +103,7 @@ export const Contact = () =>
                                                     value={formDetails.lastName}
                                                     placeholder="Last Name"
                                                     onChange={(e) => onFormUpdate("lastName", e.target.value)}
+                                                    className="w-full bg-white bg-opacity-10 border border-solid border-white border-opacity-50 rounded-3xl text-white mb-2 py-4 px-6 font-medium text-lg tracking-wider transition-all duration-300 ease-in-out focus:bg-white focus:text-dark placeholder:text-base placeholder:font-normal placeholder:text-white focus:placeholder:text-dark focus:placeholder:opacity-80 md:py-3 md:px-4"
                                                 />
                                                 {errors.lastName && <p className="error text-red-500 text-sm mt-1">{errors.lastName}</p>}
                                             </div>
@@ -111,6 +113,7 @@ export const Contact = () =>
                                                     value={formDetails.email}
                                                     placeholder="Email Address"
                                                     onChange={(e) => onFormUpdate("email", e.target.value)}
+                                                    className="w-full bg-white bg-opacity-10 border border-solid border-white border-opacity-50 rounded-3xl text-white mb-2 py-4 px-6 font-medium text-lg tracking-wider transition-all duration-300 ease-in-out focus:bg-white focus:text-dark placeholder:text-base placeholder:font-normal placeholder:text-white focus:placeholder:text-dark focus:placeholder:opacity-80 md:py-3 md:px-4"
                                                 />
                                                 {errors.email && <p className="error text-red-500 text-sm mt-1">{errors.email}</p>}
                                             </div>
@@ -120,6 +123,7 @@ export const Contact = () =>
                                                     value={formDetails.phone}
                                                     placeholder="Phone No."
                                                     onChange={(e) => onFormUpdate("phone", e.target.value)}
+                                                    className="w-full bg-white bg-opacity-10 border border-solid border-white border-opacity-50 rounded-3xl text-white mb-2 py-4 px-6 font-medium text-lg tracking-wider transition-all duration-300 ease-in-out focus:bg-white focus:text-dark placeholder:text-base placeholder:font-normal placeholder:text-white focus:placeholder:text-dark focus:placeholder:opacity-80 md:py-3 md:px-4"
                                                 />
                                             </div>
                                         </div>
@@ -129,12 +133,13 @@ export const Contact = () =>
                                                 value={formDetails.message}
                                                 placeholder="Message"
                                                 onChange={(e) => onFormUpdate("message", e.target.value)}
+                                                className="w-full bg-white bg-opacity-10 border border-solid border-white border-opacity-50 rounded-3xl text-white mb-2 py-4 px-6 font-medium text-lg tracking-wider transition-all duration-300 ease-in-out focus:bg-white focus:text-dark placeholder:text-base placeholder:font-normal placeholder:text-white focus:placeholder:text-dark focus:placeholder:opacity-80 md:py-3 md:px-4"
                                             ></textarea>
                                             {errors.message && <p className="error text-red-500 text-sm mt-1">{errors.message}</p>}
                                         </div>
                                         <div>
-                                            <button type="submit">
-                                                <span>{buttonText}</span>
+                                            <button type="submit" className="font-bold text-black bg-white py-4 px-12 text-lg mt-6 rounded-none relative transition-all duration-300 ease-in-out hover:text-white before:content-[''] before:bg-dark before:w-0 before:h-full before:absolute before:top-0 before:left-0 before:z-0 before:transition-all before:duration-300 before:ease-in-out hover:before:w-full sm:py-3 sm:px-6 sm:text-sm">
+                                                <span className="z-10 relative">{buttonText}</span>
                                             </button>
                                         </div>
                                         {status.message && (
@@ -150,7 +155,7 @@ export const Contact = () =>
                         </TrackVisibility>
                     </div>
                     <div className="w-full flex justify-center">
-                        <img src={contactImg} alt="Contact Us" className="max-w-full h-auto" />
+                        <img src={contactImg} alt="Contact Us" className="w-11/12 max-w-full h-auto" />
                     </div>
                 </div>
             </div>

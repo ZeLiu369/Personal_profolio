@@ -41,67 +41,99 @@ export const NavBar = () =>
 
     return (
         <Router>
-            <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+            <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ease-in-out ${scrolled ? 'py-0 bg-black' : 'py-3'}`}>
                 <div className="main-container">
                     <div className="flex items-center justify-between w-full">
                         {/* Logo/Avatar */}
-                        <a href="/" className="navbar-brand">
-                            <img src={avatar} alt="avatar" className="logo-avatar" />
+                        <a href="/" className="w-auto">
+                            <img src={avatar} alt="avatar" className="w-12 h-12 rounded-full object-cover border-2 border-white transition-transform duration-300 ease-in-out hover:scale-110 sm:w-10 sm:h-10" />
                         </a>
 
                         {/* Mobile menu button */}
                         <button
-                            className={`navbar-toggler md:hidden ${mobileMenuOpen ? '[aria-expanded="true"]' : ''}`}
+                            className="navbar-toggler md:hidden focus:outline-none focus:shadow-none active:outline-none active:shadow-none"
                             aria-controls="mobile-menu"
+                            aria-expanded={mobileMenuOpen}
                             onClick={toggleMobileMenu}
                         >
-                            <span className="navbar-toggler-icon"></span>
+                            <span className={`block w-6 h-4 relative transition-all duration-300 ease-linear top-[-2px] bg-none
+                                before:w-6 before:absolute before:h-0.5 before:bg-white before:left-0 before:content-[''] before:z-20 before:transition-all before:duration-300 before:ease-linear
+                                after:w-6 after:absolute after:h-0.5 after:bg-white after:left-0 after:content-[''] after:z-20 after:transition-all after:duration-300 after:ease-linear
+                                ${mobileMenuOpen
+                                    ? "border-transparent before:translate-y-2 before:-rotate-45 after:rotate-45 after:top-2"
+                                    : "border-b-2 border-white before:top-0 after:top-2"
+                                }`}>
+                            </span>
                         </button>
 
                         {/* Desktop menu */}
                         <div className="hidden md:flex items-center space-x-8">
                             <div className="flex space-x-6">
-                                <a href="#home" className={`navbar-link ${activeLink === 'home' ? 'active' : ''}`} onClick={() => onUpdateActiveLink('home')}>Home</a>
-                                <a href="#skills" className={`navbar-link ${activeLink === 'skills' ? 'active' : ''}`} onClick={() => onUpdateActiveLink('skills')}>Skills</a>
-                                <a href="#experience" className={`navbar-link ${activeLink === 'experience' ? 'active' : ''}`} onClick={() => onUpdateActiveLink('experience')}>Experience</a>
-                                <a href="#education" className={`navbar-link ${activeLink === 'education' ? 'active' : ''}`} onClick={() => onUpdateActiveLink('education')}>Education</a>
-                                <a href="#projects" className={`navbar-link ${activeLink === 'projects' ? 'active' : ''}`} onClick={() => onUpdateActiveLink('projects')}>Projects</a>
+                                <a href="#home" className={`font-normal text-white tracking-wider px-6 text-lg transition-all duration-300 ease-in-out lg:px-4 lg:text-base hover:opacity-100 ${activeLink === 'home' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('home')}>Home</a>
+                                <a href="#skills" className={`font-normal text-white tracking-wider px-6 text-lg transition-all duration-300 ease-in-out lg:px-4 lg:text-base hover:opacity-100 ${activeLink === 'skills' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('skills')}>Skills</a>
+                                <a href="#experience" className={`font-normal text-white tracking-wider px-6 text-lg transition-all duration-300 ease-in-out lg:px-4 lg:text-base hover:opacity-100 ${activeLink === 'experience' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('experience')}>Experience</a>
+                                <a href="#education" className={`font-normal text-white tracking-wider px-6 text-lg transition-all duration-300 ease-in-out lg:px-4 lg:text-base hover:opacity-100 ${activeLink === 'education' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('education')}>Education</a>
+                                <a href="#projects" className={`font-normal text-white tracking-wider px-6 text-lg transition-all duration-300 ease-in-out lg:px-4 lg:text-base hover:opacity-100 ${activeLink === 'projects' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('projects')}>Projects</a>
                             </div>
                             <div className="flex items-center space-x-4">
-                                <div className="social-icon">
-                                    <a href="https://www.linkedin.com/in/zeliu369/" target="_blank" rel="noopener noreferrer">
-                                        <img src={navIcon1} alt="LinkedIn" />
+                                <div className="inline-block ml-4">
+                                    <a href="https://www.linkedin.com/in/zeliu369/" target="_blank" rel="noopener noreferrer" className="group w-10 h-10 bg-white bg-opacity-10 inline-flex rounded-full mr-2 items-center justify-center border border-white border-opacity-50 relative transition-all duration-300 ease-in-out
+                                        before:content-[''] before:w-10 before:h-10 before:absolute before:bg-white before:rounded-full before:scale-0 before:transition-all before:duration-300 before:ease-in-out
+                                        hover:before:scale-100
+                                    ">
+                                        <img src={navIcon1} alt="LinkedIn" className="w-2/5 z-10 transition-all duration-300 ease-in-out group-hover:brightness-0" />
                                     </a>
-                                    <a href="https://github.com/ZeLiu369/" target="_blank" rel="noopener noreferrer">
-                                        <img src={githubmarkwhite} alt="GitHub" />
+                                    <a href="https://github.com/ZeLiu369/" target="_blank" rel="noopener noreferrer" className="group w-10 h-10 bg-white bg-opacity-10 inline-flex rounded-full mr-2 items-center justify-center border border-white border-opacity-50 relative transition-all duration-300 ease-in-out
+                                        before:content-[''] before:w-10 before:h-10 before:absolute before:bg-white before:rounded-full before:scale-0 before:transition-all before:duration-300 before:ease-in-out
+                                        hover:before:scale-100
+                                    ">
+                                        <img src={githubmarkwhite} alt="GitHub" className="w-2/5 z-10 transition-all duration-300 ease-in-out group-hover:brightness-0" />
                                     </a>
                                 </div>
                                 <HashLink to='#connect'>
-                                    <button className="navbar-connect-btn"><span>Let's Connect</span></button>
+                                    <button className="font-bold text-white border border-white py-4 px-8 text-lg ml-4 relative bg-transparent transition-all duration-300 ease-in-out hover:text-dark
+                                        before:content-[''] before:w-0 before:h-full before:absolute before:bg-white before:left-0 before:top-0 before:-z-10 before:transition-all before:duration-300 before:ease-in-out
+                                        hover:before:w-full
+                                        lg:py-3 lg:px-6 lg:text-base
+                                    ">
+                                        <span className="z-10 relative">Let's Connect</span>
+                                    </button>
                                 </HashLink>
                             </div>
                         </div>
 
                         {/* Mobile menu */}
                         <div className={`md:hidden absolute top-full left-0 w-full bg-dark transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-                            <div className="navbar-collapse">
-                                <div className="navbar-nav">
-                                    <a href="#home" className={`navbar-link ${activeLink === 'home' ? 'active' : ''}`} onClick={() => onUpdateActiveLink('home')}>Home</a>
-                                    <a href="#skills" className={`navbar-link ${activeLink === 'skills' ? 'active' : ''}`} onClick={() => onUpdateActiveLink('skills')}>Skills</a>
-                                    <a href="#experience" className={`navbar-link ${activeLink === 'experience' ? 'active' : ''}`} onClick={() => onUpdateActiveLink('experience')}>Experience</a>
-                                    <a href="#education" className={`navbar-link ${activeLink === 'education' ? 'active' : ''}`} onClick={() => onUpdateActiveLink('education')}>Education</a>
-                                    <a href="#projects" className={`navbar-link ${activeLink === 'projects' ? 'active' : ''}`} onClick={() => onUpdateActiveLink('projects')}>Projects</a>
+                            <div className="bg-dark p-4 rounded mt-3">
+                                <div className="mt-3">
+                                    <a href="#home" className={`py-3 text-center min-h-11 min-w-11 flex items-center justify-center font-normal text-white tracking-wider text-lg transition-all duration-300 ease-in-out hover:opacity-100 ${activeLink === 'home' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('home')}>Home</a>
+                                    <a href="#skills" className={`py-3 text-center min-h-11 min-w-11 flex items-center justify-center font-normal text-white tracking-wider text-lg transition-all duration-300 ease-in-out hover:opacity-100 ${activeLink === 'skills' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('skills')}>Skills</a>
+                                    <a href="#experience" className={`py-3 text-center min-h-11 min-w-11 flex items-center justify-center font-normal text-white tracking-wider text-lg transition-all duration-300 ease-in-out hover:opacity-100 ${activeLink === 'experience' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('experience')}>Experience</a>
+                                    <a href="#education" className={`py-3 text-center min-h-11 min-w-11 flex items-center justify-center font-normal text-white tracking-wider text-lg transition-all duration-300 ease-in-out hover:opacity-100 ${activeLink === 'education' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('education')}>Education</a>
+                                    <a href="#projects" className={`py-3 text-center min-h-11 min-w-11 flex items-center justify-center font-normal text-white tracking-wider text-lg transition-all duration-300 ease-in-out hover:opacity-100 ${activeLink === 'projects' ? 'opacity-100' : 'opacity-75'}`} onClick={() => onUpdateActiveLink('projects')}>Projects</a>
                                 </div>
-                                <div className="social-icon">
-                                    <a href="https://www.linkedin.com/in/zeliu369/" target="_blank" rel="noopener noreferrer">
-                                        <img src={navIcon1} alt="LinkedIn" />
+                                <div className="mt-4 text-center">
+                                    <a href="https://www.linkedin.com/in/zeliu369/" target="_blank" rel="noopener noreferrer" className="group w-10 h-10 bg-white bg-opacity-10 inline-flex rounded-full mr-2 items-center justify-center border border-white border-opacity-50 relative transition-all duration-300 ease-in-out
+                                        before:content-[''] before:w-10 before:h-10 before:absolute before:bg-white before:rounded-full before:scale-0 before:transition-all before:duration-300 before:ease-in-out
+                                        hover:before:scale-100
+                                    ">
+                                        <img src={navIcon1} alt="LinkedIn" className="w-2/5 z-10 transition-all duration-300 ease-in-out group-hover:brightness-0" />
                                     </a>
-                                    <a href="https://github.com/ZeLiu369/" target="_blank" rel="noopener noreferrer">
-                                        <img src={githubmarkwhite} alt="GitHub" />
+                                    <a href="https://github.com/ZeLiu369/" target="_blank" rel="noopener noreferrer" className="group w-10 h-10 bg-white bg-opacity-10 inline-flex rounded-full mr-2 items-center justify-center border border-white border-opacity-50 relative transition-all duration-300 ease-in-out
+                                        before:content-[''] before:w-10 before:h-10 before:absolute before:bg-white before:rounded-full before:scale-0 before:transition-all before:duration-300 before:ease-in-out
+                                        hover:before:scale-100
+                                    ">
+                                        <img src={githubmarkwhite} alt="GitHub" className="w-2/5 z-10 transition-all duration-300 ease-in-out group-hover:brightness-0" />
                                     </a>
                                 </div>
-                                <HashLink to='#connect'>
-                                    <button className="navbar-connect-btn"><span>Let's Connect</span></button>
+                                <HashLink to='#connect' className="flex justify-center mt-4">
+                                    <button className="font-bold text-white border border-white py-4 px-8 text-lg relative bg-transparent transition-all duration-300 ease-in-out hover:text-dark
+                                        before:content-[''] before:w-0 before:h-full before:absolute before:bg-white before:left-0 before:top-0 before:-z-10 before:transition-all before:duration-300 before:ease-in-out
+                                        hover:before:w-full
+                                        lg:py-3 lg:px-6 lg:text-base
+                                    ">
+                                        <span className="z-10 relative">Let's Connect</span>
+                                    </button>
                                 </HashLink>
                             </div>
                         </div>

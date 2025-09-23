@@ -79,26 +79,26 @@ const Banner = () =>
     }
 
     return (
-        <section className="banner" id="home">
+        <section className="py-20 pb-16 bg-banner bg-top bg-cover bg-no-repeat sm:py-28 sm:pb-10 md:py-24 md:pb-12 lg:py-28 lg:pb-16 xl:py-32 xl:pb-20" id="home">
             <div className="main-container">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-screen">
                     <div className="w-full order-2 lg:order-1">
-                        <span className="tagline">Welcome to Ze's Websites</span>
-                        <h1>
+                        <span className="font-bold tracking-wider py-2 px-3 bg-gradient-to-r from-primary/50 to-primary-dark/50 border border-white border-opacity-50 text-xl mb-4 inline-block sm:text-base">Welcome to Ze's Websites</span>
+                        <h1 className="text-6xl font-bold tracking-wider leading-none mb-5 block sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl xl:leading-tight">
                             Hi! I'm Ze, a <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'>
-                                <span className="wrap">{text}</span>
+                                <span className="wrap border-r-2 border-gray-400 border-opacity-80">{text}</span>
                             </span>
                         </h1>
-                        <p>I am a problem solver with a passion for making things done.</p>
-                        <button className="flex items-center mt-8">
+                        <p className="text-light-muted text-lg tracking-wider leading-6 w-full md:text-sm xl:text-base">I am a problem solver with a passion for making things done.</p>
+                        <button className="group text-white font-bold text-xl mt-14 tracking-wider flex items-center">
                             Let's Connect
-                            <svg className="w-6 h-6 ml-2 transition-all duration-300 ease-in-out" fill="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-6 h-6 ml-2 transition-all duration-300 ease-in-out group-hover:ml-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                             </svg>
                         </button>
                     </div>
                     <div className="w-full order-1 lg:order-2 flex justify-center lg:justify-end">
-                        <img src={headerImg} alt="Header Img" className="max-w-full h-auto" />
+                        <img src={headerImg} alt="Header Img" className="max-w-full h-auto animate-updown" />
                     </div>
                 </div>
             </div>
