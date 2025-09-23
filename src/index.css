@@ -327,7 +327,7 @@ code {
   }
 
   .skill-icon {
-    @apply text-2xl text-primary;
+    @apply text-2xl text-blue-300;
   }
 
   .skill-header h5 {
@@ -335,7 +335,7 @@ code {
   }
 
   .percentage {
-    @apply text-base font-semibold text-primary;
+    @apply text-base font-semibold text-blue-300;
   }
 
   .skill-bar {
@@ -354,67 +354,212 @@ code {
     @apply text-white text-opacity-90 font-semibold;
   }
 
-  /* Experience & Education Timeline */
+  /* Experience & Education Timeline - Modern Design */
   .experience-section,
   .education-section {
-    @apply py-20 bg-dark;
+    @apply py-20 bg-gradient-to-br from-dark via-dark-lighter to-dark relative overflow-hidden;
+  }
+
+  .experience-section::before,
+  .education-section::before {
+    @apply content-[""] absolute inset-0 bg-gradient-to-r from-primary/5 to-primary-dark/5 pointer-events-none;
   }
 
   .experience-section h2,
   .education-section h2 {
-    @apply text-4xl font-bold text-center mb-12;
+    @apply text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary via-pink-400 to-primary-dark bg-clip-text text-transparent relative;
+  }
+
+  .experience-section h2::after,
+  .education-section h2::after {
+    @apply content-[""] absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-primary to-primary-dark rounded-full;
   }
 
   .timeline {
-    @apply relative max-w-4xl mx-auto;
+    @apply relative max-w-6xl mx-auto px-4;
   }
 
+  /* Modern timeline line with gradient */
   .timeline::before {
-    @apply content-[""] absolute top-0 left-1/2 w-1 h-full bg-white bg-opacity-30 transform -translate-x-1/2;
+    @apply content-[""] absolute top-0 left-1/2 w-0.5 h-full bg-gradient-to-b from-primary/60 via-primary/30 to-primary/60 transform -translate-x-1/2 rounded-full;
+    box-shadow: 0 0 20px rgba(170, 54, 124, 0.4);
   }
 
   .timeline-item {
-    @apply relative w-3/5 p-5 box-border;
+    @apply relative w-full max-w-lg mb-12 transition-all duration-500 ease-out;
   }
 
   .timeline-item.left {
-    @apply -left-10 text-right;
+    @apply mr-auto pr-12;
   }
 
   .timeline-item.right {
-    @apply left-1/2 text-left;
+    @apply ml-auto pl-12;
   }
 
+  /* Modern timeline cards */
   .timeline-content {
-    @apply bg-white bg-opacity-10 p-5 rounded-xl shadow-lg relative transition-transform duration-300 ease-in-out;
+    @apply relative p-8 rounded-2xl transition-all duration-500 ease-out transform hover:-translate-y-2 cursor-pointer;
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.1) 0%, 
+      rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 10px 32px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .timeline-content:hover {
-    @apply scale-105;
+    @apply shadow-2xl;
+    box-shadow: 
+      0 20px 60px rgba(170, 54, 124, 0.2),
+      0 10px 32px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(170, 54, 124, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
   }
 
+  /* Timeline dots - modern floating design */
   .timeline-item::after {
-    @apply content-[""] absolute top-5 w-4 h-4 bg-gradient-to-r from-primary to-primary-dark rounded-full left-1/2 transform -translate-x-1/2 z-10 shadow-lg;
+    @apply content-[""] absolute top-8 w-6 h-6 rounded-full z-20 transition-all duration-300 ease-out;
+    background: linear-gradient(135deg, #AA367C 0%, #4A2FBD 100%);
+    box-shadow: 
+      0 0 20px rgba(170, 54, 124, 0.6),
+      0 0 40px rgba(170, 54, 124, 0.3),
+      inset 0 2px 4px rgba(255, 255, 255, 0.2);
   }
 
+  .timeline-item.left::after {
+    @apply right-0 transform translate-x-1/2;
+  }
+
+  .timeline-item.right::after {
+    @apply left-0 transform -translate-x-1/2;
+  }
+
+  .timeline-item:hover::after {
+    @apply scale-125;
+    box-shadow: 
+      0 0 30px rgba(170, 54, 124, 0.8),
+      0 0 60px rgba(170, 54, 124, 0.4),
+      inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  }
+
+  /* Content styling */
   .timeline-date {
-    @apply text-base font-bold text-gray-400 block mb-1;
+    @apply inline-block px-4 py-2 mb-4 text-sm font-semibold rounded-full bg-gradient-to-r from-primary/20 to-primary-dark/20 border border-primary/30 text-blue-300;
   }
 
-  .timeline-content p {
-    @apply text-base text-gray-300 leading-6;
-  }
-
-  .school-link {
-    @apply text-blue-600 font-bold no-underline transition-colors duration-300 ease-in-out;
-  }
-
-  .school-link:hover {
-    @apply text-primary underline;
+  .timeline-content h3 {
+    @apply text-2xl font-bold mb-3 text-white leading-tight;
   }
 
   .timeline-content h4 {
-    @apply text-lg text-gray-300 mt-1;
+    @apply text-lg font-medium mb-4 text-blue-300 leading-relaxed;
+  }
+
+  .timeline-content p {
+    @apply text-base text-gray-300 leading-relaxed leading-7;
+  }
+
+  /* Link styling */
+  .company-link,
+  .school-link {
+    @apply relative text-blue-300 font-bold no-underline transition-all duration-300 ease-out hover:hover:text-blue-500;
+  }
+
+  .company-link::after,
+  .school-link::after {
+    @apply content-[""] absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary-dark transition-all duration-300 ease-out;
+  }
+
+  .company-link:hover::after,
+  .school-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Timeline highlight lists */
+  .timeline-content ul {
+    @apply mt-3;
+  }
+
+  .timeline-content li {
+    @apply flex items-start mb-2 text-sm text-gray-300 leading-relaxed;
+  }
+
+  .timeline-content h5 {
+    @apply text-sm font-semibold text-blue-300 mb-2 mt-4;
+  }
+
+  /* Icon styling */
+  /* .timeline-content .text-blue-300 {
+    @apply text-blue-300;
+  } */
+
+  /* .timeline-content .text-yellow-400 {
+    @apply text-yellow-400;
+  } */
+/* 
+  .timeline-content .text-blue-400 {
+    @apply text-blue-400;
+  }
+
+  .timeline-content .text-green-400 {
+    @apply text-green-400;
+  } */
+
+  /* Timeline animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(170, 54, 124, 0.6);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(170, 54, 124, 0.8);
+    }
+  }
+
+  .timeline-item {
+    @apply opacity-0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+  .timeline-item:nth-child(2) { animation-delay: 0.3s; }
+  .timeline-item:nth-child(3) { animation-delay: 0.5s; }
+  .timeline-item:nth-child(4) { animation-delay: 0.7s; }
+
+  .timeline-item::after {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  /* Enhanced hover effects */
+  .timeline-content:hover h3 {
+    @apply transform translate-x-1;
+  }
+
+  .timeline-content:hover .timeline-date {
+    @apply scale-105;
+  }
+
+  /* Gradient overlays for better text readability */
+  .timeline-content::before {
+    @apply content-[""] absolute inset-0 bg-gradient-to-br from-transparent via-primary/5 to-primary-dark/10 opacity-0 rounded-2xl transition-opacity duration-500 ease-out pointer-events-none;
+  }
+
+  .timeline-content:hover::before {
+    @apply opacity-100;
   }
 
   /* Projects Components */
@@ -503,7 +648,7 @@ code {
   }
 
   .project-tech-stack {
-    @apply text-xs text-primary mb-5 leading-6 font-medium;
+    @apply text-xs text-blue-300 mb-5 leading-6 font-medium;
   }
 
   .project-link-btn {
@@ -699,21 +844,43 @@ code {
       @apply py-3 px-4;
     }
 
-    /* Timeline responsive */
+    /* Modern Timeline Mobile Responsive */
     .timeline::before {
       @apply left-8;
     }
 
     .timeline-item {
-      @apply w-full pl-12 text-left;
+      @apply w-full max-w-full pl-16 pr-4 mb-8;
     }
 
+    .timeline-item.left,
     .timeline-item.right {
-      @apply left-0;
+      @apply ml-0 mr-0 pl-16 pr-4 text-left;
     }
 
     .timeline-item::after {
-      @apply left-6;
+      @apply left-6 transform -translate-x-0 w-5 h-5;
+    }
+
+    .timeline-content {
+      @apply p-6;
+    }
+
+    .timeline-content h3 {
+      @apply text-xl;
+    }
+
+    .timeline-content h4 {
+      @apply text-base;
+    }
+
+    .timeline-date {
+      @apply text-xs px-3 py-1.5;
+    }
+
+    .experience-section h2,
+    .education-section h2 {
+      @apply text-3xl mb-10;
     }
   }
 
