@@ -3,6 +3,7 @@ import { ProjectCard } from "./ProjectCard";
 import travelPlaceImg from "../assets/img/travelPlace.png";
 import parklot_detection from "../assets/img/parklot_detection.png";
 import planet_hopper from "../assets/img/planet_hopper.png";
+import zcamp_hero from "../assets/img/zcamp_hero.png";
 import tts from "../assets/img/tts.png";
 import paper from "../assets/img/paper.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
@@ -14,12 +15,20 @@ export const Projects = () =>
 
     const projects = [
         {
+            title: "ZCamp",
+            description: "A full-stack web application built with the PERN stack for discovering, sharing, and reviewing campgrounds.",
+            img: zcamp_hero,
+            link: "https://zcamp.me",
+            techStack: "React(Next.js) | TypeScript | Node.js(Express) | PostgreSQL(PostGIS) | Redis | AWS S3 | Docker | Mapbox "
+        },
+        {
             title: "Travel Place",
             description: "A full-stack website travel destinations and allows registered users to CRUD their own posts images, and reviews.",
             img: travelPlaceImg,
             link: "https://github.com/ZeLiu369/TravelPlace",
             techStack: "JavaScript | BootStrap | MongoDB | HTML | CSS | Express.js | Node.js"
         },
+
         {
             title: "Parking Lot Detection",
             description: "CNN to detect empty space of parking lots",
@@ -31,9 +40,10 @@ export const Projects = () =>
             title: "Planet Hopper",
             description: "A 2D sci-fi platformer where players navigate levels, battle alien enemies, and explore planets via a spaceship. Features include pathfinding NPCs, camera tracking, level selection, anti-gravity mechanics, and collectibles.",
             img: planet_hopper,
-            link: "https://github.com/ZeLiu369/Planet_Hopper/",
+            link: "https://github.com/ZeLiu369/Planet_Hopper",
             techStack: "C++"
         },
+
     ];
 
     const publications = [
