@@ -70,34 +70,27 @@ export const Projects = () =>
                         <TrackVisibility>
                             {({ isVisible }) =>
                                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                                    <h2>Projects</h2>
+                                    {/* <h2>Projects</h2> */}
                                     {/* Custom Tab Navigation */}
-                                    <div className="nav-pills flex justify-center items-center mb-5" id="pills-tab">
-                                        <div className="flex w-3/4 mx-auto rounded-full bg-white bg-opacity-10 overflow-hidden sm:w-full sm:mx-auto md:w-full">
+                                    <div className="flex justify-center mb-12">
+                                        <div className="relative flex p-1 bg-white/5 rounded-full backdrop-blur-xl border border-white/10 shadow-lg">
                                             <button
-                                                className={`py-4 px-0 text-white w-1/2 text-lg tracking-wider font-medium relative transition-all duration-300 ease-in-out text-center z-0 before:content-[''] before:absolute before:w-0 before:h-full before:bg-gradient-to-r before:from-primary before:to-primary-dark before:top-0 before:left-0 before:-z-10 before:transition-all before:duration-300 before:ease-in-out border border-white border-opacity-50 rounded-l-full
-                            ${activeTab === 'first' ? 'active before:w-full border-white' : ''}
-                            sm:w-full sm:mb-3 sm:text-center sm:py-4 sm:px-5 sm:text-base sm:font-medium sm:text-white sm:text-opacity-80 sm:border sm:border-white sm:border-opacity-10 sm:transition-all sm:duration-300 sm:m-0 sm:rounded-xl sm:bg-white sm:bg-opacity-5 sm:backdrop-blur-sm
-                            sm:active:bg-gradient-to-r sm:active:from-primary/90 sm:active:to-primary-dark/90 sm:active:border-none sm:active:text-white sm:active:shadow-lg sm:active:-translate-y-1
-                            sm:not-active:hover:bg-white sm:not-active:hover:bg-opacity-10 sm:not-active:hover:-translate-y-0.5 sm:not-active:hover:shadow-md
-                            sm:before:hidden
-                            md:w-full`}
+                                                className={`relative w-48 px-4 py-3 text-lg font-medium text-white transition-colors duration-300 ease-in-out z-10 rounded-full outline-none focus:outline-none md:w-40 md:text-base sm:w-36 sm:text-sm ${activeTab !== 'first' ? 'hover:text-white/80' : ''}`}
                                                 onClick={() => setActiveTab('first')}
                                             >
                                                 Projects
                                             </button>
                                             <button
-                                                className={`py-4 px-0 text-white w-1/2 text-lg tracking-wider font-medium relative transition-all duration-300 ease-in-out text-center z-0 before:content-[''] before:absolute before:w-0 before:h-full before:bg-gradient-to-r before:from-primary before:to-primary-dark before:top-0 before:left-0 before:-z-10 before:transition-all before:duration-300 before:ease-in-out border border-white border-opacity-50 rounded-r-full
-                            ${activeTab === 'second' ? 'active before:w-full border-white' : ''}
-                            sm:w-full sm:mb-3 sm:text-center sm:py-4 sm:px-5 sm:text-base sm:font-medium sm:text-white sm:text-opacity-80 sm:border sm:border-white sm:border-opacity-10 sm:transition-all sm:duration-300 sm:m-0 sm:rounded-xl sm:bg-white sm:bg-opacity-5 sm:backdrop-blur-sm
-                            sm:active:bg-gradient-to-r sm:active:from-primary/90 sm:active:to-primary-dark/90 sm:active:border-none sm:active:text-white sm:active:shadow-lg sm:active:-translate-y-1
-                            sm:not-active:hover:bg-white sm:not-active:hover:bg-opacity-10 sm:not-active:hover:-translate-y-0.5 sm:not-active:hover:shadow-md
-                            sm:before:hidden
-                            md:w-full`}
+                                                className={`relative w-48 px-4 py-3 text-lg font-medium text-white transition-colors duration-300 ease-in-out z-10 rounded-full outline-none focus:outline-none md:w-40 md:text-base sm:w-36 sm:text-sm ${activeTab !== 'second' ? 'hover:text-white/80' : ''}`}
                                                 onClick={() => setActiveTab('second')}
                                             >
-                                                Publications/Papers
+                                                Publications
                                             </button>
+                                            <span
+                                                className={`absolute top-1 h-[calc(100%-0.5rem)] w-48 md:w-40 sm:w-36 bg-gradient-to-r from-primary/80 to-primary-dark/80 rounded-full shadow-md transition-transform duration-300 ease-in-out
+                                                ${activeTab === 'first' ? 'transform translate-x-0' : 'transform translate-x-full'}`}
+                                                style={{ transform: activeTab === 'second' ? 'translateX(calc(100% - 4px))' : 'translateX(4px)' }}
+                                            ></span>
                                         </div>
                                     </div>
 
