@@ -90,12 +90,13 @@ const Banner = () =>
                             </span>
                         </h1>
                         <p className="text-light-muted text-lg tracking-wider leading-6 w-full md:text-sm xl:text-base">I am a problem solver with a passion for making things done.</p>
-                        <button className="group text-white font-bold text-xl mt-14 tracking-wider flex items-center">
-                            Let's Connect
-                            <svg className="w-6 h-6 ml-2 transition-all duration-300 ease-in-out group-hover:ml-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        <a href="#connect" className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white mt-14 tracking-wider overflow-hidden bg-transparent border-2 border-white rounded-full transition-all duration-300 ease-in-out hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]">
+                            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary to-primary-dark opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"></span>
+                            <span className="relative z-10">Let's Connect</span>
+                            <svg className="relative z-10 w-6 h-6 ml-2 transition-transform duration-300 ease-in-out group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                             </svg>
-                        </button>
+                        </a>
                     </div>
                     <div className="w-full order-1 lg:order-2 flex justify-center lg:justify-end">
                         <img src={headerImg} alt="Header Img" className="max-w-full h-auto animate-updown" />
