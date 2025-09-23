@@ -6,7 +6,7 @@ const education = [
         school: "Simon Fraser University",
         degree: "Master in Smart Manufacturing Engineering",
         duration: "Sept. 2022 - Dec. 2024",
-        description: "AI, IoT, digital twins, and robotics drive innovation in manufacturing, enhancing processes with 3D printing, big data analytics, and next-gen technologies.",
+        description: "AI, IoT, digital twins, and robotics drive innovation in manufacturing, enhancing processes with 3D printing, machine learning, big data analytics, and next-gen technologies.",
         link: "https://www.sfu.ca/fas/study/future-graduates/programs/master-engineering-mse.html"
     },
     {
