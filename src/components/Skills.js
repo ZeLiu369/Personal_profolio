@@ -1,4 +1,4 @@
-import { FaCode, FaDatabase, FaBrain, FaChartBar } from 'react-icons/fa';
+import { FaCode, FaDatabase, FaBrain, FaChartBar, FaServer, FaCloud, FaMobile, FaTools } from 'react-icons/fa';
 import colorSharp from "../assets/img/color-sharp.png";
 
 const SkillBar = ({ skill, percentage, icon, technologies }) =>
@@ -29,38 +29,53 @@ export const Skills = () =>
 {
     const skills = [
         {
-            skill: "Full-Stack Development",
-            percentage: 95,
-            icon: <FaDatabase className="text-2xl text-blue-300 sm:text-xl" />,
-            technologies: [
-                "Frontend: React, Redux, JavaScript, TypeScript, HTML, CSS, Tailwind CSS, Bootstrap, Material UI",
-                "Backend: Node.js, Express, Flask, Django, FastAPI, RESTful API design",
-                "Database: MongoDB, PostgreSQL, MySQL",
-                "Cloud: AWS, Azure, Docker, Kubernetes",
-                "CI/CD: Git, GitHub Actions"
-            ].map(line =>
-            {
-                const [category, ...rest] = line.split(': ');
-                return `${category}: ${rest.join(': ')}`;
-            }).join('\n')
+            skill: "Programming Languages",
+            percentage: 90,
+            icon: <FaCode className="text-2xl text-blue-300 sm:text-xl" />,
+            technologies: "Python, JavaScript, TypeScript, Java, C++, C#, C, SQL"
         },
         {
-            skill: "Software Engineering",
-            percentage: 95,
-            icon: <FaCode className="text-2xl text-blue-300 sm:text-xl" />,
-            technologies: "C++, C#, C, Java, Python"
+            skill: "Frontend Development",
+            percentage: 90,
+            icon: <FaMobile className="text-2xl text-blue-300 sm:text-xl" />,
+            technologies: "React, Next.js, HTML, CSS, Tailwind CSS, Bootstrap, Material UI, Zustand"
+        },
+        {
+            skill: "Backend Development",
+            percentage: 90,
+            icon: <FaServer className="text-2xl text-blue-300 sm:text-xl" />,
+            technologies: "Node.js, Express, Flask, Django, FastAPI, RESTful API design"
+        },
+        {
+            skill: "Database & Storage",
+            percentage: 90,
+            icon: <FaDatabase className="text-2xl text-blue-300 sm:text-xl" />,
+            technologies: "MongoDB, PostgreSQL, MySQL, Redis"
+        },
+        {
+            skill: "DevOps & Cloud",
+            percentage: 88,
+            icon: <FaCloud className="text-2xl text-blue-300 sm:text-xl" />,
+            technologies: "AWS, Docker, Git, GitHub Actions, CI/CD, Terraform"
         },
         {
             skill: "AI & Machine Learning",
-            percentage: 95,
+            percentage: 85,
             icon: <FaBrain className="text-2xl text-blue-300 sm:text-xl" />,
-            technologies: "TensorFlow, PyTorch, Scikit-learn, Neural Networks"
+            technologies: "PyTorch, TensorFlow, Scikit-learn, Neural Networks, RAG, LangChain, LLM APIs, Hugging Face, OpenCV"
         },
         {
             skill: "Data Analysis",
             percentage: 80,
             icon: <FaChartBar className="text-2xl text-blue-300 sm:text-xl" />,
             technologies: "Pandas, NumPy, Data Visualization, Statistical Analysis"
+        },
+
+        {
+            skill: "Development Tools",
+            percentage: 90,
+            icon: <FaTools className="text-2xl text-blue-300 sm:text-xl" />,
+            technologies: "Git, GitHub, VS Code, Jupyter Notebook, Postman, Linux/Unix"
         }
     ];
 

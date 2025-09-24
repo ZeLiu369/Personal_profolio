@@ -3,6 +3,20 @@ import { FaBriefcase, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 
 const experiences = [
     {
+        company: "Vynaptix",
+        position: "Software Engineer",
+        duration: "Dec. 2024 - Present",
+        location: "BC, Canada",
+        companyLink: "https://vynaptix.com/",
+        description: "Working on AI ERP Enterprise SaaS Platform development, focusing on scalable enterprise solutions and AI integration.",
+        highlights: [
+            "Developing AI-powered ERP solutions for enterprise clients",
+            "Implementing scalable SaaS architecture and microservices",
+            "Integrating AI capabilities into enterprise workflow systems",
+            "Collaborating with cross-functional teams on platform optimization"
+        ]
+    },
+    {
         company: "QCA Systems",
         position: "Software Developer",
         duration: "Sept. 2024 - Dec 2024",
