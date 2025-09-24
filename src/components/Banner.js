@@ -104,19 +104,20 @@ const Banner = () =>
                         {/* <span className="font-bold tracking-wider py-2 px-3 bg-gradient-to-r from-primary/50 to-primary-dark/50 border border-white border-opacity-50 text-xl mb-4 inline-block sm:text-base">Welcome to Ze's Websites</span> */}
                         <h1 className="text-5xl font-bold tracking-wider leading-relaxed mb-5 sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
                             <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
-                                Hi! I'm Ze, a{' '}
-                                <span className="txt-rotate" style={{ display: 'inline-block', minWidth: getMinWidth(), textAlign: 'left' }} dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'>
-                                    <span className="wrap" style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
-                                        {text}
-                                        <span className="typing-cursor" style={{
-                                            display: 'inline-block',
-                                            width: '2px',
-                                            height: '1em',
-                                            backgroundColor: '#9CA3AF',
-                                            marginLeft: '4px',
-                                            verticalAlign: 'text-bottom'
-                                        }}></span>
-                                    </span>
+                                Hi! I'm Ze
+                            </span>
+                            <br />
+                            <span className="txt-rotate" style={{ display: 'inline-block', minWidth: getMinWidth(), textAlign: 'left' }} dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'>
+                                <span className="wrap" style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+                                    {text}
+                                    <span className="typing-cursor" style={{
+                                        display: 'inline-block',
+                                        width: '2px',
+                                        height: '1em',
+                                        backgroundColor: '#9CA3AF',
+                                        marginLeft: '4px',
+                                        verticalAlign: 'text-bottom'
+                                    }}></span>
                                 </span>
                             </span>
                         </h1>

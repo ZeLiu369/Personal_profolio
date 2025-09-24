@@ -4,13 +4,13 @@ import colorSharp from "../assets/img/color-sharp.png";
 const SkillBar = ({ skill, percentage, icon, technologies }) =>
 {
     return (
-        <div className="bg-dark bg-opacity-95 rounded-2xl p-6 mb-5 border border-white border-opacity-10 transition-transform duration-300 backdrop-blur-sm hover:-translate-y-1 sm:p-5">
-            <div className="flex justify-between items-center mb-3">
-                <div className="flex items-center gap-3">
+        <div className="bg-dark bg-opacity-95 rounded-2xl p-6 mb-5 border border-white border-opacity-10 transition-transform duration-300 backdrop-blur-sm hover:-translate-y-1 sm:p-5 overflow-hidden">
+            <div className="flex flex-wrap items-start mb-3 gap-y-1">
+                <div className="flex items-center gap-3 min-w-0">
                     {icon}
-                    <h5 className="m-0 text-lg font-semibold text-white sm:text-base">{skill}</h5>
+                    <h5 className="m-0 text-lg font-semibold text-white sm:text-base break-words">{skill}</h5>
                 </div>
-                <div className="text-base font-semibold text-blue-300 sm:text-sm">{percentage}%</div>
+                <div className="ml-auto shrink-0 text-base font-semibold text-blue-300 sm:text-sm">{percentage}%</div>
             </div>
             <div className="h-2 bg-white bg-opacity-10 rounded overflow-hidden mb-3 sm:h-1.5">
                 <div
