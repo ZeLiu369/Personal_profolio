@@ -6,6 +6,7 @@ import planet_hopper from "../assets/img/planet_hopper.png";
 import zcamp_hero from "../assets/img/zcamp_hero.png";
 import tts from "../assets/img/tts.png";
 import paper from "../assets/img/paper.png";
+import techsum_img from "../assets/img/techsum_black.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -17,17 +18,29 @@ export const Projects = () =>
     const projects = [
         {
             title: "ZCamp",
-            description: "A full-stack web application built with the PERN stack for discovering, sharing, and reviewing campgrounds.",
+            description: "A high-performance, full-stack web application for discovering, sharing, and reviewing campgrounds.\n\n                  Features an interactive map with server-side clustering for thousands of locations, secure multi-provider OAuth authentication, and scalable cloud image management with real-time geospatial queries.",
             img: zcamp_hero,
             link: "https://zcamp.me",
-            techStack: "React(Next.js) | TypeScript | Node.js(Express) | PostgreSQL(PostGIS) | Redis | AWS S3 | Docker | Mapbox "
+            techStack: "React(Next.js) | TypeScript | Node.js(Express) | PostgreSQL(PostGIS) | Redis | AWS S3 | Docker | Mapbox ",
+            type: "demo",
+            githubLink: "https://github.com/ZeLiu369/TravelPlace"
+        },
+        {
+            title: "TechSum",
+            description: "A full-stack platform that automatically scrapes, analyzes, and organizes tech news into thematic timelines. \n\n Features AI-powered entity extraction, semantic search, and real-time timeline generation with sub-second response times.",
+            img: techsum_img,
+            link: "https://tech-sum-news-front-lac.vercel.app/",
+            techStack: "Python (FastAPI) | Next.js | PostgreSQL (pgvector) | Docker | LLMs (Gemini, GPT-4o) | Sentence-Transformers",
+            type: "demo",
+            githubLink: "https://github.com/ZeLiu369/Techsum-timeline"
         },
         {
             title: "Travel Place",
             description: "A full-stack website travel destinations and allows registered users to CRUD their own posts images, and reviews.",
             img: travelPlaceImg,
             link: "https://github.com/ZeLiu369/TravelPlace",
-            techStack: "JavaScript | BootStrap | MongoDB | HTML | CSS | Express.js | Node.js"
+            techStack: "JavaScript | BootStrap | MongoDB | HTML | CSS | Express.js | Node.js",
+            type: "github"
         },
 
         {
@@ -35,14 +48,16 @@ export const Projects = () =>
             description: "CNN to detect empty space of parking lots",
             img: parklot_detection,
             link: "https://github.com/ZeLiu369/Computer_Version_Parking_Lot_Detection",
-            techStack: "Python | OpenCV | NumPy · Convolutional Neural Networks (CNN) | Keras"
+            techStack: "Python | OpenCV | NumPy · Convolutional Neural Networks (CNN) | Keras",
+            type: "github"
         },
         {
             title: "Planet Hopper",
             description: "A 2D sci-fi platformer where players navigate levels, battle alien enemies, and explore planets via a spaceship. Features include pathfinding NPCs, camera tracking, level selection, anti-gravity mechanics, and collectibles.",
             img: planet_hopper,
             link: "https://github.com/ZeLiu369/Planet_Hopper",
-            techStack: "C++"
+            techStack: "C++",
+            type: "github"
         },
 
     ];

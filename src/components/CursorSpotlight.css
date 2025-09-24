@@ -1,0 +1,34 @@
+.cursor-spotlight {
+  position: fixed;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.1s ease;
+  opacity: 0;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.cursor-spotlight.visible {
+  opacity: 1;
+}
+
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .cursor-spotlight {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* 暗色主题适配 */
+@media (prefers-color-scheme: dark) {
+  .cursor-spotlight {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  }
+}

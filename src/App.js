@@ -7,12 +7,14 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import Experience from "./components/Experience";
 import Education from './components/Education';
+import CursorSpotlight from './components/CursorSpotlight';
 
 
 function App()
 {
   return (
     <div className="App">
+      <CursorSpotlight />
       <NavBar />
       <Banner />
       <Skills />
