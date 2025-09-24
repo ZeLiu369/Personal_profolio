@@ -13,7 +13,18 @@ const Banner = () =>
     let [index, setIndex] = useState(0);
     let [tying, setTying] = useState(true);
     let [deleting, setDeleting] = useState(false);
-    let [timer, setTimer] = useState(() => 300 - Math.random() * 100); // lazy初始化, 只有第一次render的时候 计算一次, 300- Math... 
+    let [timer, setTimer] = useState(() => 300 - Math.random() * 100); // lazy初始化, 只有第一次render的时候 计算一次, 300- Math...
+
+    // 根据屏幕尺寸计算最小宽度
+    const getMinWidth = () =>
+    {
+        if (typeof window === 'undefined') return '250px';
+        const width = window.innerWidth;
+        if (width < 640) return '180px';  // sm
+        if (width < 768) return '200px';  // md
+        if (width < 1024) return '220px'; // lg
+        return '250px';                   // xl and above
+    };
 
 
     // useEffect(() => 
@@ -90,13 +101,22 @@ const Banner = () =>
             <div className="main-container">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-screen">
                     <div className="w-full order-2 lg:order-1">
-                        <span className="font-bold tracking-wider py-2 px-3 bg-gradient-to-r from-primary/50 to-primary-dark/50 border border-white border-opacity-50 text-xl mb-4 inline-block sm:text-base">Welcome to Ze's Websites</span>
-                        <h1 className="text-5xl font-bold tracking-wider leading-none mb-5 block sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl xl:leading-tight">
-                            <span className="inline-block">Hi! I'm Ze, a</span>{' '}
-                            <span className="txt-rotate inline-block" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'>
-                                <span className="wrap inline-block min-w-[200px] sm:min-w-[150px] md:min-w-[170px] lg:min-w-[170px] xl:min-w-[200px] text-left">
-                                    {text}
-                                    <span className="typing-cursor border-r-2 border-gray-400 ml-1"></span>
+                        {/* <span className="font-bold tracking-wider py-2 px-3 bg-gradient-to-r from-primary/50 to-primary-dark/50 border border-white border-opacity-50 text-xl mb-4 inline-block sm:text-base">Welcome to Ze's Websites</span> */}
+                        <h1 className="text-5xl font-bold tracking-wider leading-relaxed mb-5 sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+                            <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+                                Hi! I'm Ze, a{' '}
+                                <span className="txt-rotate" style={{ display: 'inline-block', minWidth: getMinWidth(), textAlign: 'left' }} dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'>
+                                    <span className="wrap" style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+                                        {text}
+                                        <span className="typing-cursor" style={{
+                                            display: 'inline-block',
+                                            width: '2px',
+                                            height: '1em',
+                                            backgroundColor: '#9CA3AF',
+                                            marginLeft: '4px',
+                                            verticalAlign: 'text-bottom'
+                                        }}></span>
+                                    </span>
                                 </span>
                             </span>
                         </h1>

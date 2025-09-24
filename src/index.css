@@ -92,6 +92,11 @@
   .shadow-glow-hover {
     box-shadow: 0 0 30px rgba(170, 54, 124, 0.5);
   }
+  
+  /* Typing cursor animation */
+  .typing-cursor {
+    animation: blink 1s infinite;
+  }
 }
 
 /* Blinking cursor animation */

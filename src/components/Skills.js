@@ -69,7 +69,7 @@ export const Skills = () =>
             <div className="main-container">
                 <div className="flex justify-center">
                     <div className="w-full">
-                        <div className="bg-white bg-opacity-5 rounded-3xl text-center py-8 px-12 -mt-5 backdrop-blur-sm sm:py-4 sm:px-3 md:py-5 md:px-4 lg:py-8 lg:px-5">
+                        <div className="bg-white bg-opacity-5 rounded-3xl text-center py-8 px-12 mt-16 backdrop-blur-sm sm:py-4 sm:px-3 md:py-5 md:px-4 lg:py-8 lg:px-5">
                             <h2 className="text-4xl font-bold mb-5">Skills</h2>
                             <div className="max-w-4xl mx-auto py-3 px-8 sm:py-3 sm:px-4">
                                 {skills.map((item, index) => (

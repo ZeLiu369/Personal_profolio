@@ -154,9 +154,9 @@ export const Contact = () =>
                             )}
                         </TrackVisibility>
                     </div>
-                    <div className="w-full flex justify-center">
+                    {/* <div className="w-full flex justify-center">
                         <img src={contactImg} alt="Contact Us" className="w-11/12 max-w-full h-auto" />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
