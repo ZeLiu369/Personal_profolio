@@ -1,5 +1,6 @@
 /* eslint-disable */
 import headerImg from '../assets/img/header-img.svg'
+import StarfieldCanvas from './StarfieldCanvas';
 import { useEffect, useState, useMemo } from "react";
 
 /* eslint-disable */
@@ -79,7 +80,13 @@ const Banner = () =>
     }
 
     return (
-        <section className="py-20 pb-16 bg-banner bg-top bg-cover bg-no-repeat sm:py-28 sm:pb-10 md:py-24 md:pb-12 lg:py-28 lg:pb-16 xl:py-32 xl:pb-20" id="home">
+        <section className="relative py-20 pb-16 sm:py-28 sm:pb-10 md:py-24 md:pb-12 lg:py-28 lg:pb-16 xl:py-32 xl:pb-20" id="home">
+            {/* Starfield background */}
+            <div className="absolute inset-0 -z-10">
+                <StarfieldCanvas />
+                {/* gradient background for color like screenshot */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#231557] via-[#43107a] to-[#ff1361] opacity-60" />
+            </div>
             <div className="main-container">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-screen">
                     <div className="w-full order-2 lg:order-1">
@@ -98,9 +105,9 @@ const Banner = () =>
                             </svg>
                         </a>
                     </div>
-                    <div className="w-full order-1 lg:order-2 flex justify-center lg:justify-end">
+                    {/* <div className="w-full order-1 lg:order-2 flex justify-center lg:justify-end">
                         <img src={headerImg} alt="Header Img" className="max-w-full h-auto animate-updown" />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
