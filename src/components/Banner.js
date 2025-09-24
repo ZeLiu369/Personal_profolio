@@ -99,7 +99,7 @@ const Banner = () =>
                 <div className="absolute inset-0 bg-gradient-to-br from-[#231557] via-[#43107a] to-[#ff1361] opacity-60" />
             </div>
             <div className="main-container">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-screen">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[70vh] md:min-h-[80vh] lg:min-h-screen">
                     <div className="w-full order-2 lg:order-1">
                         {/* <span className="font-bold tracking-wider py-2 px-3 bg-gradient-to-r from-primary/50 to-primary-dark/50 border border-white border-opacity-50 text-xl mb-4 inline-block sm:text-base">Welcome to Ze's Websites</span> */}
                         <h1 className="text-5xl font-bold tracking-wider leading-relaxed mb-5 sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
@@ -121,7 +121,7 @@ const Banner = () =>
                             </span>
                         </h1>
                         <p className="text-light-muted text-lg tracking-wider leading-6 w-full md:text-sm xl:text-base">I am a problem solver with a passion for making things done.</p>
-                        <a href="#connect" className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white mt-14 tracking-wider overflow-hidden bg-transparent border-2 border-white rounded-full transition-all duration-300 ease-in-out hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]">
+                        <a href="#connect" className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white mt-10 sm:mt-8 md:mt-10 lg:mt-12 tracking-wider overflow-hidden bg-transparent border-2 border-white rounded-full transition-all duration-300 ease-in-out hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]">
                             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary to-primary-dark opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"></span>
                             <span className="relative z-10">Let's Connect</span>
                             <svg className="relative z-10 w-6 h-6 ml-2 transition-transform duration-300 ease-in-out group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

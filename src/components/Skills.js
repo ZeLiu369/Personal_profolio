@@ -101,7 +101,7 @@ export const Skills = () =>
                     </div>
                 </div>
             </div>
-            <img className="top-1/4 absolute bottom-0 w-2/5 -z-10" src={colorSharp} alt="" />
+            <img className="hidden md:block top-1/4 absolute bottom-0 w-2/5 -z-10" src={colorSharp} alt="" />
         </section>
     );
 };

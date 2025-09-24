@@ -8,7 +8,7 @@ const STAR_COLOR = '#fff';
 const STAR_SIZE = 3; // base size
 const STAR_MIN_SCALE = 0.2;
 const OVERFLOW_THRESHOLD = 50;
-const MAX_SPEED = 2.5; // clamp max velocity to avoid eye-straining motion
+let MAX_SPEED = 2.5; // adjustable for mobile
 
 export default function StarfieldCanvas()
 {
@@ -33,8 +33,9 @@ export default function StarfieldCanvas()
 
         function setStarCount()
         {
-            // same idea as screenshot: proportional to viewport
-            return Math.floor((window.innerWidth + window.innerHeight) / 8);
+            const isMobile = window.innerWidth < 640;
+            // fewer stars on mobile for performance
+            return Math.floor((window.innerWidth + window.innerHeight) / (isMobile ? 14 : 8));
         }
 
         function generate()
@@ -172,7 +173,8 @@ export default function StarfieldCanvas()
             context.clearRect(0, 0, width, height);
             context.save();
             context.lineCap = 'round';
-            context.lineWidth = STAR_SIZE * scale;
+            const isMobile = window.innerWidth < 640;
+            context.lineWidth = (isMobile ? 2 : STAR_SIZE) * scale;
             context.strokeStyle = STAR_COLOR;
 
             stars.forEach((star) =>
@@ -230,6 +232,9 @@ export default function StarfieldCanvas()
             pointerY = null;
         }
 
+        // set dynamics for current viewport
+        MAX_SPEED = window.innerWidth < 640 ? 1.5 : 2.5;
+
         // init
         generate();
         resize();
@@ -238,7 +243,7 @@ export default function StarfieldCanvas()
         // Use window/document listeners so canvas can sit behind content
         window.addEventListener('resize', resize);
         window.addEventListener('mousemove', handleMouseMove, { passive: true });
-        window.addEventListener('touchmove', handleTouchMove, { passive: false });
+        window.addEventListener('touchmove', handleTouchMove, { passive: true });
         window.addEventListener('touchend', handleMouseLeave, { passive: true });
         document.addEventListener('mouseleave', handleMouseLeave, { passive: true });
 

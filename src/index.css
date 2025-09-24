@@ -97,6 +97,15 @@
   .typing-cursor {
     animation: blink 1s infinite;
   }
+
+  /* Hide scrollbars while preserving scroll behavior */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
 }
 
 /* Blinking cursor animation */

@@ -78,7 +78,7 @@ export const Projects = () =>
     ]
 
     return (
-        <section className="project" id="projects">
+        <section className="project overflow-hidden" id="projects">
             <div className="main-container">
                 <div className="flex justify-center">
                     <div className="w-full">
@@ -87,8 +87,8 @@ export const Projects = () =>
                                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                                     {/* <h2>Projects</h2> */}
                                     {/* Custom Tab Navigation */}
-                                    <div className="flex justify-center mb-12">
-                                        <div className="relative flex p-1 bg-white/5 rounded-full backdrop-blur-xl border border-white/10 shadow-lg">
+                                    <div className="flex justify-start sm:justify-center mb-12 overflow-x-auto no-scrollbar px-2">
+                                        <div className="relative flex p-1 bg-white/5 rounded-full backdrop-blur-xl border border-white/10 shadow-lg overflow-hidden min-w-max space-x-1">
                                             <button
                                                 className={`relative w-48 px-4 py-3 text-lg font-medium text-white transition-colors duration-300 ease-in-out z-10 rounded-full outline-none focus:outline-none md:w-40 md:text-base sm:w-36 sm:text-sm ${activeTab !== 'first' ? 'hover:text-white/80' : ''}`}
                                                 onClick={() => setActiveTab('first')}
@@ -138,7 +138,7 @@ export const Projects = () =>
                     </div>
                 </div>
             </div>
-            <img className="top-20 absolute bottom-0 w-1/3 right-0 -z-10" src={colorSharp2} alt="backgroundImage" />
+            <img className="hidden md:block top-20 absolute bottom-0 w-1/3 right-0 -z-10" src={colorSharp2} alt="backgroundImage" />
         </section>
     )
 }
