@@ -8,6 +8,7 @@ const STAR_COLOR = '#fff';
 const STAR_SIZE = 3; // base size
 const STAR_MIN_SCALE = 0.2;
 const OVERFLOW_THRESHOLD = 50;
+const MAX_SPEED = 2.5; // clamp max velocity to avoid eye-straining motion
 
 export default function StarfieldCanvas()
 {
@@ -122,6 +123,11 @@ export default function StarfieldCanvas()
             stars.forEach(placeStar);
         }
 
+        function clamp(value, min, max)
+        {
+            return Math.min(max, Math.max(min, value));
+        }
+
         function update()
         {
             // friction
@@ -130,6 +136,12 @@ export default function StarfieldCanvas()
             // ease towards target
             velocity.x += (velocity.tx - velocity.x) * 0.8;
             velocity.y += (velocity.ty - velocity.y) * 0.8;
+
+            // clamp speeds to a comfortable ceiling
+            velocity.x = clamp(velocity.x, -MAX_SPEED, MAX_SPEED);
+            velocity.y = clamp(velocity.y, -MAX_SPEED, MAX_SPEED);
+            velocity.tx = clamp(velocity.tx, -MAX_SPEED, MAX_SPEED);
+            velocity.ty = clamp(velocity.ty, -MAX_SPEED, MAX_SPEED);
 
             stars.forEach((star) =>
             {
@@ -192,6 +204,8 @@ export default function StarfieldCanvas()
                 const oy = y - pointerY;
                 velocity.tx += (ox / 8) * scale * (touchInput ? 1 : -1);
                 velocity.ty += (oy / 8) * scale * (touchInput ? 1 : -1);
+                velocity.tx = clamp(velocity.tx, -MAX_SPEED, MAX_SPEED);
+                velocity.ty = clamp(velocity.ty, -MAX_SPEED, MAX_SPEED);
             }
             pointerX = x;
             pointerY = y;
