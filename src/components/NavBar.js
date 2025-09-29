@@ -93,7 +93,7 @@ export const NavBar = () =>
                                     <span className="relative z-10">Education</span>
                                 </a>
                                 <a href="#projects" onMouseMove={handleMouseMove} className={`nav-link relative font-normal tracking-wider px-5 py-2 rounded-full text-lg lg:px-4 lg:text-base overflow-hidden transition-colors duration-300 ease-in-out ${activeLink === 'projects' ? 'text-white' : 'text-white/75'}`} onClick={() => onUpdateActiveLink('projects')}>
-                                    <span className="relative z-10">Projects</span>
+                                    <span className="relative z-10">Projects & Publications</span>
                                 </a>
                             </div>
                             <div className="flex items-center space-x-4">
@@ -131,7 +131,7 @@ export const NavBar = () =>
                                     <a href="#skills" className={`py-3 w-full text-center rounded-lg font-normal tracking-wider text-lg transition-colors duration-300 ease-in-out hover:bg-white/10 hover:text-white ${activeLink === 'skills' ? 'text-white' : 'text-white/75'}`} onClick={() => onUpdateActiveLink('skills')}>Skills</a>
                                     <a href="#experience" className={`py-3 w-full text-center rounded-lg font-normal tracking-wider text-lg transition-colors duration-300 ease-in-out hover:bg-white/10 hover:text-white ${activeLink === 'experience' ? 'text-white' : 'text-white/75'}`} onClick={() => onUpdateActiveLink('experience')}>Experience</a>
                                     <a href="#education" className={`py-3 w-full text-center rounded-lg font-normal tracking-wider text-lg transition-colors duration-300 ease-in-out hover:bg-white/10 hover:text-white ${activeLink === 'education' ? 'text-white' : 'text-white/75'}`} onClick={() => onUpdateActiveLink('education')}>Education</a>
-                                    <a href="#projects" className={`py-3 w-full text-center rounded-lg font-normal tracking-wider text-lg transition-colors duration-300 ease-in-out hover:bg-white/10 hover:text-white ${activeLink === 'projects' ? 'text-white' : 'text-white/75'}`} onClick={() => onUpdateActiveLink('projects')}>Projects</a>
+                                    <a href="#projects" className={`py-3 w-full text-center rounded-lg font-normal tracking-wider text-lg transition-colors duration-300 ease-in-out hover:bg-white/10 hover:text-white ${activeLink === 'projects' ? 'text-white' : 'text-white/75'}`} onClick={() => onUpdateActiveLink('projects')}>Projects & Publications</a>
                                 </div>
                                 <div className="mt-4 text-center">
                                     <a href="https://www.linkedin.com/in/zeliu369/" target="_blank" rel="noopener noreferrer" className="group w-10 h-10 bg-white bg-opacity-10 inline-flex rounded-full mr-2 items-center justify-center border border-white border-opacity-50 relative transition-all duration-300 ease-in-out

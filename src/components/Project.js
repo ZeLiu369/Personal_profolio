@@ -128,6 +128,7 @@ export const Projects = () =>
                                                     <ProjectCard
                                                         key={index}
                                                         {...publication}
+                                                        isPublication={true}
                                                     />
                                                 ))}
                                             </div>

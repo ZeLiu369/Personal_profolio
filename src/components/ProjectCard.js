@@ -1,5 +1,5 @@
 
-export const ProjectCard = ({ title = "Untitled", description = "No description available", img = "www.example.com", link = "#", techStack = "Unknown", type = "github", githubLink = null }) =>
+export const ProjectCard = ({ title = "Untitled", description = "No description available", img = "www.example.com", link = "#", techStack = "Unknown", type = "github", githubLink = null, isPublication = false }) =>
 {
     return (
         <div className="bg-white bg-opacity-5 rounded-3xl overflow-hidden mb-8 transition-all duration-300 border border-solid border-white border-opacity-10 backdrop-blur-xl hover:-translate-y-3 hover:bg-white hover:bg-opacity-10 hover:shadow-2xl hover:border-white hover:border-opacity-20 sm:mb-6 sm:hover:-translate-y-1">
@@ -14,7 +14,7 @@ export const ProjectCard = ({ title = "Untitled", description = "No description 
                 <div className="text-xs text-blue-300 mb-5 leading-6 font-medium sm:mb-4">{techStack}</div>
                 <div className="flex flex-wrap gap-3">
                     <a href={link} target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-to-r from-primary to-primary-dark text-white py-3 px-5 rounded-full no-underline text-sm font-semibold transition-all duration-300 border-none shadow-lg hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 hover:-translate-y-1 hover:shadow-2xl hover:text-white sm:py-2 sm:px-4 sm:text-xs">
-                        {type === "demo" ? "View Demo" : "View GitHub"}
+                        {isPublication ? "Paper Link" : (type === "demo" ? "View Demo" : "View GitHub")}
                     </a>
                     {githubLink && type === "demo" && (
                         <a href={githubLink} target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-to-r from-primary to-primary-dark text-white py-3 px-5 rounded-full no-underline text-sm font-semibold transition-all duration-300 border-none shadow-lg hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 hover:-translate-y-1 hover:shadow-2xl hover:text-white sm:py-2 sm:px-4 sm:text-xs">
