@@ -23,7 +23,7 @@ export const Projects = () =>
             link: "https://zcamp.me",
             techStack: "React(Next.js) | TypeScript | Node.js(Express) | PostgreSQL(PostGIS) | Redis | AWS S3 | Docker | Mapbox ",
             type: "demo",
-            githubLink: "https://github.com/ZeLiu369/TravelPlace"
+            githubLink: "https://github.com/ZeLiu369/ZCamp"
         },
         {
             title: "TechSum",
@@ -67,7 +67,7 @@ export const Projects = () =>
             title: "Enhancing Leg Odometry in Legged Robots with Learned Contact Bias: An LSTM Recurrent Neural Network Approach: IEEE/RSJ IROS 2024",
             description: "Trained LSTM & RNN neural networks, reducing Legged Robots odometry errors by 64.93%.",
             img: paper,
-            link: "https://github.com/ZeLiu369/TravelPlace"
+            link: "https://ieeexplore.ieee.org/document/10802731"
         },
         {
             title: "Comparative Analysis of Transfer Learning in Deep Learning Text-to-Speech Models on a Few-Shot, Low-Resource, Customized Dataset",
